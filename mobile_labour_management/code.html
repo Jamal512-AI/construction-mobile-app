@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&amp;family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#eae6de",
+                        "secondary-fixed-dim": "#d4ccbf",
+                        "on-tertiary-container": "#554020",
+                        "on-error": "#ffffff",
+                        "on-surface": "#2e3230",
+                        "surface-variant": "#e4e0d8",
+                        "on-surface-variant": "#4a4e4a",
+                        "on-background": "#2e3230",
+                        "tertiary-fixed": "#f8e0a8",
+                        "error-container": "#ffdad8",
+                        "tertiary": "#705c30",
+                        "on-primary-container": "#d8f0de",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#8ecf9e",
+                        "primary-container": "#78a886",
+                        "error": "#b83230",
+                        "background": "#faf6f0",
+                        "surface-tint": "#4a7c59",
+                        "secondary": "#6b6358",
+                        "outline-variant": "#c4c8bc",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#c8e8d0",
+                        "surface-container-highest": "#e4e0d8",
+                        "inverse-surface": "#2e3230",
+                        "surface-container": "#f0ece4",
+                        "on-secondary-fixed": "#1e1a13",
+                        "tertiary-container": "#c4a66a",
+                        "outline": "#74796e",
+                        "on-tertiary-fixed-variant": "#554020",
+                        "inverse-on-surface": "#f5f0e8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#f0e8db",
+                        "tertiary-fixed-dim": "#dcc48e",
+                        "on-tertiary-fixed": "#221a05",
+                        "surface-bright": "#faf6f0",
+                        "inverse-primary": "#8ecf9e",
+                        "on-primary-fixed": "#002110",
+                        "primary": "#4a7c59",
+                        "on-secondary-fixed-variant": "#4a4538",
+                        "on-primary-fixed-variant": "#2a6038",
+                        "secondary-container": "#f0e8db",
+                        "surface-container-low": "#f5f1ea",
+                        "surface-dim": "#dbd7cf",
+                        "surface": "#faf6f0",
+                        "on-secondary-container": "#5e5548",
+                        "on-error-container": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Literata"],
+                        "body": ["Nunito Sans"],
+                        "label": ["Nunito Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Nunito Sans', sans-serif; }
+        h1, h2, h3 { font-family: 'Literata', serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#faf6f0] dark:bg-stone-900 shadow-[0_4px_20px_rgba(46,50,48,0.06)] flex justify-between items-center px-6 h-16 w-full max-w-md mx-auto left-0 right-0">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img src="../assets/logo.png" alt="Ghulam Qammar Logo" class="w-full h-full object-cover"/>
+</div>
+<span class="font-serif text-xl font-bold text-emerald-900 dark:text-emerald-100">Ghulam Qammar</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-emerald-800 dark:text-emerald-400 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="pt-20 px-6 max-w-md mx-auto">
+<!-- Search & Filter Section -->
+<section class="mb-8">
+<div class="flex flex-col gap-4">
+<h1 class="text-3xl font-bold text-on-surface tracking-tight">Labour Force</h1>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input id="search-labour" class="w-full pl-12 pr-4 py-3 bg-surface-container rounded-xl border-none focus:ring-2 focus:ring-primary text-on-surface-variant font-body" placeholder="Search by name or skill..." type="text"/>
+</div>
+<div id="category-filters" class="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+<button class="bg-primary text-on-primary px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap filter-btn active" data-role="all">All</button>
+<button class="bg-surface-container-high text-on-surface-variant px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap filter-btn" data-role="Mistri">Mistri</button>
+<button class="bg-surface-container-high text-on-surface-variant px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap filter-btn" data-role="Mazdoor">Mazdoor</button>
+<button class="bg-surface-container-high text-on-surface-variant px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap filter-btn" data-role="Electrician">Electrician</button>
+<button class="bg-surface-container-high text-on-surface-variant px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap filter-btn" data-role="Plumber">Plumber</button>
+</div>
+</div>
+</section>
+<!-- Workers Directory (Asymmetric/Bento Style) -->
+<section class="grid grid-cols-1 gap-6" id="labour-container">
+    <div class="text-center p-8">Loading...</div>
+</section>
+<!-- Stats Bento Row -->
+<section class="mt-8 mb-4 grid grid-cols-2 gap-4">
+<div class="bg-primary/10 p-4 rounded-xl">
+<span id="total-labour-count" class="block text-primary font-bold text-2xl">0</span>
+<span class="text-xs font-bold uppercase tracking-widest text-on-primary-fixed-variant">Total Labour</span>
+</div>
+<div class="bg-tertiary/10 p-4 rounded-xl">
+<span class="block text-tertiary font-bold text-2xl">98%</span>
+<span class="text-xs font-bold uppercase tracking-widest text-on-tertiary-container">Work Efficiency</span>
+</div>
+</section>
+</main>
+<!-- Toast Notification -->
+<div id="toast-popup" class="fixed bottom-28 left-1/2 -translate-x-1/2 z-[500] transition-all duration-300 opacity-0 translate-y-4 pointer-events-none flex items-center gap-3 bg-on-surface text-background px-5 py-3.5 rounded-2xl shadow-2xl max-w-xs w-auto">
+    <span id="toast-icon" class="material-symbols-outlined text-xl">check_circle</span>
+    <span id="toast-msg" class="text-sm font-semibold font-body">Done!</span>
+</div>
+<!-- FAB: Add Labour -->
+<button id="fab-add" class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center z-40 active:scale-90 transition-all">
+<span class="material-symbols-outlined text-3xl">person_add</span>
+</button>
+<!-- Modal Mockup (Dual use: ADD and EDIT) -->
+<div class="fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-[300] hidden flex items-end justify-center" id="add-modal">
+<div class="bg-background w-full max-w-md rounded-t-3xl p-8 flex flex-col gap-6 animate-slide-up">
+<div class="w-12 h-1 bg-outline-variant rounded-full mx-auto mb-2"></div>
+<h2 id="modal-title" class="text-2xl font-bold text-on-surface">Add New Worker</h2>
+<input id="edit-worker-id" type="hidden" value=""/>
+<div class="space-y-4 max-h-[60vh] overflow-y-auto pr-2">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Full Name</label>
+<input id="input-name" class="w-full p-4 bg-surface-container rounded-xl border-none font-body" placeholder="e.g. Zahid Iqbal" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Skill Category</label>
+<select id="input-role" class="w-full p-4 bg-surface-container rounded-xl border-none font-body">
+<option>Mistri</option>
+<option>Mazdoor</option>
+<option>Electrician</option>
+<option>Plumber</option>
+<option>Carpenter</option>
+<option>Painter</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">City</label>
+<input id="input-city" class="w-full p-4 bg-surface-container rounded-xl border-none font-body" placeholder="Lahore" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Contact Number</label>
+<input id="input-contact" class="w-full p-4 bg-surface-container rounded-xl border-none font-body" placeholder="0300 1234567" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Experience (Yrs)</label>
+<input id="input-exp" class="w-full p-4 bg-surface-container rounded-xl border-none font-body" placeholder="5" type="number"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Daily Rate/Wage</label>
+<input id="input-rate" class="w-full p-4 bg-surface-container rounded-xl border-none font-body" placeholder="2500" type="number"/>
+</div>
+</div>
+</div>
+<div class="flex gap-4 mt-2">
+<button id="btn-cancel" class="flex-1 py-4 rounded-xl font-bold text-primary bg-primary/10">Cancel</button>
+<button id="btn-save" class="flex-1 py-4 rounded-xl font-bold text-on-primary bg-primary">Save Profile</button>
+</div>
+</div>
+</div>
+
+<!-- Worker Detail Panel (Slide-in) -->
+<div id="worker-detail-slide" class="fixed inset-0 z-[200] bg-background translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto pb-24">
+    <header class="sticky top-0 z-10 bg-[#faf6f0] shadow-sm flex items-center justify-between px-6 h-16 max-w-md mx-auto">
+        <button id="detail-close" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container active:scale-95 transition-all">
+            <span class="material-symbols-outlined">arrow_back</span>
+        </button>
+        <span class="font-headline font-bold text-lg">Worker Profile</span>
+        <button id="detail-delete" class="w-10 h-10 flex items-center justify-center rounded-full bg-red-100 text-red-600 active:scale-95 transition-all">
+            <span class="material-symbols-outlined">delete</span>
+        </button>
+    </header>
+
+    <div class="max-w-md mx-auto p-6 space-y-6">
+        <!-- Identity -->
+        <div class="flex flex-col items-center text-center gap-3 py-6">
+            <div class="w-24 h-24 rounded-3xl bg-tertiary-container/30 flex items-center justify-center">
+                <span class="material-symbols-outlined text-tertiary text-5xl">person</span>
+            </div>
+            <div>
+                <h2 id="detail-name" class="text-2xl font-bold text-on-surface">—</h2>
+                <div id="detail-role-badge" class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mt-1">—</div>
+            </div>
+        </div>
+
+        <!-- Major Stats Grid -->
+        <div class="grid grid-cols-2 gap-4">
+            <div class="bg-surface-container-low p-4 rounded-2xl border border-outline-variant/30 text-center">
+                <p class="text-[10px] font-bold uppercase tracking-widest text-secondary mb-1">Daily Wage</p>
+                <p id="detail-wage" class="text-xl font-bold text-primary">Rs. 0</p>
+            </div>
+            <div class="bg-surface-container-low p-4 rounded-2xl border border-outline-variant/30 text-center">
+                <p class="text-[10px] font-bold uppercase tracking-widest text-secondary mb-1">Experience</p>
+                <p id="detail-experience" class="text-xl font-bold text-on-surface">0 Yrs</p>
+            </div>
+        </div>
+
+        <!-- Contact/Location List -->
+        <div class="bg-surface-container-low rounded-2xl p-5 border border-outline-variant/30 space-y-6">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-secondary">call</span>
+                <div class="flex-1">
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-secondary">Phone Number</p>
+                    <p id="detail-contact" class="font-bold text-on-surface">0300 0000000</p>
+                </div>
+                <a id="detail-call-link" href="#" class="w-10 h-10 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center active:scale-90 transition-all">
+                    <span class="material-symbols-outlined text-xl">phone_enabled</span>
+                </a>
+            </div>
+            <div class="flex items-start gap-4 pt-4 border-t border-outline-variant/20">
+                <span class="material-symbols-outlined text-secondary">location_on</span>
+                <div class="flex-1">
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-secondary">Current Location</p>
+                    <p id="detail-city" class="font-bold text-on-surface">—</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Profile Trigger -->
+        <button id="btn-edit-trigger" class="w-full py-4 bg-on-surface text-background rounded-2xl font-bold flex items-center justify-center gap-2 active:scale-95 transition-all shadow-md mt-4">
+            <span class="material-symbols-outlined text-xl">edit_note</span>
+            Edit General Profile
+        </button>
+    </div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 right-0 w-full z-50 bg-[#faf6f0] dark:bg-stone-950 shadow-[0_-4px_20px_rgba(46,50,48,0.04)] rounded-t-xl border-t border-stone-200 dark:border-stone-800 flex justify-around items-center px-2 py-3">
+<a class="flex flex-col items-center justify-center text-stone-500 hover:text-emerald-700 px-3 py-1 active:scale-90 transition-all" href="../mobile_dashboard/code.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-sans text-[11px] font-medium tracking-wide">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 hover:text-emerald-700 px-3 py-1 active:scale-90 transition-all" href="../mobile_projects_list/code.html">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+<span class="font-sans text-[11px] font-medium tracking-wide">Projects</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-emerald-100 text-emerald-900 rounded-xl px-3 py-1 active:scale-90 transition-all duration-150" href="../mobile_labour_management/code.html">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-sans text-[11px] font-medium tracking-wide">Labour</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 hover:text-emerald-700 px-3 py-1 active:scale-90 transition-all" href="../mobile_materials_inventory/code.html">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-sans text-[11px] font-medium tracking-wide">Inventory</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 hover:text-emerald-700 px-3 py-1 active:scale-90 transition-all" href="../mobile_payments_calculator/code.html">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-sans text-[11px] font-medium tracking-wide">Payments</span>
+</a>
+</nav>
+
+<script>
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzNC5WUMJIy7OpeBc33c7d261s-az13X1zf7ZOj7hzzZsXKgxHErcM5lPIj2wmceIv-/exec';
+    
+    let allLabours = [];
+    let currentFilter = 'all';
+    let _toastTimer = null;
+
+    function showToast(message, type = 'success') {
+        const toast = document.getElementById('toast-popup');
+        const icon  = document.getElementById('toast-icon');
+        const msg   = document.getElementById('toast-msg');
+        
+        // Configure by type
+        if (type === 'success') {
+            toast.className = toast.className.replace(/bg-\S+/, 'bg-on-surface');
+            icon.innerText  = 'check_circle';
+            icon.style.color = '#4ade80'; // green
+        } else if (type === 'delete') {
+            toast.className = toast.className.replace(/bg-\S+/, 'bg-on-surface');
+            icon.innerText  = 'delete_forever';
+            icon.style.color = '#f87171'; // red
+        } else if (type === 'error') {
+            icon.innerText  = 'error';
+            icon.style.color = '#fbbf24'; // amber
+        }
+        msg.innerText = message;
+
+        // Show
+        toast.classList.remove('opacity-0', 'translate-y-4');
+        toast.classList.add('opacity-100', 'translate-y-0');
+
+        // Auto-hide after 2.5s
+        if (_toastTimer) clearTimeout(_toastTimer);
+        _toastTimer = setTimeout(() => {
+            toast.classList.add('opacity-0', 'translate-y-4');
+            toast.classList.remove('opacity-100', 'translate-y-0');
+        }, 2500);
+    }
+
+    function renderLabours(laboursToRender) {
+        const container = document.getElementById('labour-container');
+        if (!container) return;
+        container.innerHTML = '';
+        
+        if (!Array.isArray(laboursToRender) || laboursToRender.length === 0) {
+            container.innerHTML = '<p class="text-center py-10 opacity-60 font-body">No workers found.</p>';
+            return;
+        }
+
+        laboursToRender.forEach(labour => {
+            // NORMALIZED DATA MAPPING (lowercase keys from our new GAS update)
+            const idKey   = labour.labourid || labour.Labour_ID;
+            const name    = labour.fullname || labour.Full_Name || 'Unknown';
+            const role    = labour.rolecategory || labour.Role_Category || 'Worker';
+            const exp     = labour.experienceyear || labour.Experience_Year || '0';
+            const contact = labour.contactnumber || labour.Contact_Number || labour.Contact_Numbe || 'N/A';
+            const city    = labour.city || 'N/A';
+            const status  = labour.status || 'Active';
+            const rawWage = labour.dailyrate || labour.Daily_Rate || '0';
+            
+            // Format for display
+            const wageStr = String(rawWage).replace(/[^0-9]/g, '');
+            const wageFormatted = wageStr && wageStr !== '0' ? parseInt(wageStr).toLocaleString() : '0';
+
+            const html = `
+            <div class="bg-surface-container-low rounded-xl p-6 shadow-[0_4px_20px_rgba(46,50,48,0.06)] flex flex-col gap-4 border border-outline-variant/20 animate-slide-up">
+                <div class="flex justify-between items-start">
+                    <div class="flex gap-4">
+                        <div class="w-14 h-14 rounded-lg bg-tertiary-container/30 flex items-center justify-center overflow-hidden">
+                            <span class="material-symbols-outlined text-tertiary">person</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-on-surface">${name}</h3>
+                            <p class="text-sm text-secondary font-medium font-body">${role} • ${exp} yrs exp</p>
+                        </div>
+                    </div>
+                    <div class="bg-emerald-100 text-emerald-800 px-2 py-1 rounded text-xs font-bold uppercase tracking-wider">${status}</div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 py-4 border-y border-outline-variant/30">
+                    <div class="flex flex-col gap-1">
+                        <span class="text-[10px] uppercase font-bold text-outline tracking-widest">Contact</span>
+                        <span class="text-sm font-medium font-body">${contact}</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <span class="text-[10px] uppercase font-bold text-outline tracking-widest">City</span>
+                        <span class="text-sm font-medium font-body">${city}</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex flex-col">
+                        <span class="text-[10px] uppercase font-bold text-outline tracking-widest">Daily Rate</span>
+                        <span class="text-lg font-bold text-primary font-body">Rs. ${wageFormatted}</span>
+                    </div>
+                    <button class="bg-surface-container px-4 py-2 rounded-lg text-xs font-bold hover:bg-outline-variant/20 transition-all active:scale-95" 
+                        onclick="viewLabourDetails('${idKey}')">View Profile</button>
+                </div>
+            </div>`;
+            container.insertAdjacentHTML('beforeend', html);
+        });
+    }
+
+    function applyFilters() {
+        const searchInput = document.getElementById('search-labour');
+        const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+        
+        if (!Array.isArray(allLabours)) return;
+
+        const filtered = allLabours.filter(worker => {
+            const name = (worker.Full_Name || worker['Full Name'] || '').toLowerCase();
+            const role = (worker.Role_Category || worker.Role || '').toLowerCase();
+            
+            const matchesSearch = name.includes(searchTerm) || role.includes(searchTerm);
+            
+            // Smart category matching
+            let matchesCategory = currentFilter === 'all';
+            if (!matchesCategory) {
+                const target = currentFilter.toLowerCase();
+                // Map legacy "Masonry" to "Mazdoor" for user convenience
+                if (target === 'mazdoor' && role.includes('masonry')) {
+                    matchesCategory = true;
+                } else {
+                    matchesCategory = role.includes(target);
+                }
+            }
+            
+            return matchesSearch && matchesCategory;
+        });
+        
+        const container = document.getElementById('labour-container');
+        if (filtered.length === 0) {
+            container.innerHTML = `
+                <div class="text-center py-12 opacity-60 font-body">
+                    <span class="material-symbols-outlined text-4xl mb-2">person_search</span>
+                    <p class="font-bold">No ${currentFilter === 'all' ? '' : currentFilter}s found</p>
+                    <p class="text-xs">Add a new worker or change your filter.</p>
+                </div>`;
+        } else {
+            renderLabours(filtered);
+        }
+    }
+
+    async function loadLabours() {
+        try {
+            const container = document.getElementById('labour-container');
+            if (container) {
+                container.innerHTML = '<div class="text-center p-8 mt-5"><span class="material-symbols-outlined animate-spin text-3xl text-primary">autorenew</span><p>Connecting to Google Sheets...</p></div>';
+            }
+            
+            const res = await fetch(GOOGLE_SCRIPT_URL + '?action=get&sheet=Labours&t=' + Date.now());
+            if (!res.ok) throw new Error('Network response was not ok: ' + res.statusText);
+            
+            const data = await res.json();
+            
+            if(data.status === 'success') {
+                allLabours = Array.isArray(data.data) ? data.data : [];
+                console.log('Fetched Labours Count:', allLabours.length);
+                if (allLabours.length > 0) {
+                    console.log('Sample Labour Object Keys:', Object.keys(allLabours[0]));
+                }
+                renderLabours(allLabours);
+                // Update total count
+                const totalPill = document.getElementById('total-labour-count');
+                if (totalPill) totalPill.innerText = allLabours.length;
+            } else {
+                throw new Error(data.message || 'Server returned error status');
+            }
+        } catch(e) { 
+            console.error('Labour Load Error:', e);
+            const container = document.getElementById('labour-container');
+            if (container) {
+                container.innerHTML = `
+                    <div class="text-center p-10 bg-red-50 rounded-2xl border border-red-100">
+                        <span class="material-symbols-outlined text-red-500 text-4xl mb-2">error</span>
+                        <p class="text-red-800 font-bold">Failed to Load Workers</p>
+                        <p class="text-red-600 text-xs mt-1">${e.message}</p>
+                        <button onclick="loadLabours()" class="mt-4 px-6 py-2 bg-red-500 text-white rounded-lg text-sm font-bold shadow-md">Retry Connection</button>
+                    </div>`;
+            }
+        }
+    }
+
+    async function viewLabourDetails(id) {
+        // Find worker by normalized ID
+        const worker = allLabours.find(l => (l.labourid || l.Labour_ID) === id);
+        if(!worker) return;
+
+        // Normalized Data Mapping
+        const idKey   = worker.labourid || worker.Labour_ID;
+        const name    = worker.fullname || worker.Full_Name || 'Unknown';
+        const role    = worker.rolecategory || worker.Role_Category || 'Worker';
+        const exp     = worker.experienceyear || worker.Experience_Year || '0';
+        const contact = worker.contactnumber || worker.Contact_Number || worker.Contact_Numbe || 'N/A';
+        const city    = worker.city || 'N/A';
+        const rawWage = worker.dailyrate || worker.Daily_Rate || '0';
+        
+        const wageStr = String(rawWage).replace(/[^0-9]/g, '');
+        const wageNumeric = wageStr && wageStr !== '0' ? parseInt(wageStr) : 0;
+
+        // Populate Panel
+        document.getElementById('detail-name').innerText = name;
+        document.getElementById('detail-role-badge').innerText = role;
+        document.getElementById('detail-wage').innerText = wageNumeric > 0 ? 'Rs. ' + wageNumeric.toLocaleString() : 'Rs. 0';
+        document.getElementById('detail-experience').innerText = exp + ' Yrs';
+        document.getElementById('detail-contact').innerText = contact;
+        document.getElementById('detail-city').innerText = city;
+        document.getElementById('detail-call-link').href = `tel:${contact}`;
+        
+        // Setup buttons
+        document.getElementById('detail-close').onclick = () => {
+            document.getElementById('worker-detail-slide').classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        };
+
+        document.getElementById('detail-delete').onclick = async () => {
+            if(!confirm(`Delete ${name}'s profile? This cannot be undone.`)) return;
+            try {
+                const res = await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify({ action: "delete_labour", Labour_ID: idKey })
+                });
+                const out = await res.json();
+                if(out.status === 'success') {
+                    document.getElementById('worker-detail-slide').classList.add('translate-x-full');
+                    document.body.style.overflow = '';
+                    loadLabours();
+                    showToast(`${name} has been removed.`, 'delete');
+                } else { showToast('Delete failed: ' + out.message, 'error'); }
+            } catch(e) { showToast('Connection error during delete.', 'error'); }
+        };
+
+        document.getElementById('btn-edit-trigger').onclick = () => {
+            // Populate MODAL for editing
+            document.getElementById('modal-title').innerText = 'Edit Worker Profile';
+            document.getElementById('edit-worker-id').value = idKey;
+            document.getElementById('input-name').value = name;
+            document.getElementById('input-role').value = role;
+            document.getElementById('input-city').value = city;
+            document.getElementById('input-contact').value = contact;
+            document.getElementById('input-exp').value = exp;
+            document.getElementById('input-rate').value = wageNumeric;
+            
+            document.getElementById('add-modal').classList.remove('hidden');
+            document.getElementById('btn-save').innerText = 'Update Changes';
+        };
+
+        // Slide in
+        document.getElementById('worker-detail-slide').classList.remove('translate-x-full');
+        document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadLabours();
+
+        // Search Input listener
+        const searchInput = document.getElementById('search-labour');
+        if (searchInput) searchInput.addEventListener('input', applyFilters);
+
+        // Category buttons listener
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active from all
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-primary', 'text-on-primary');
+                    b.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+                });
+                // Add active to current
+                btn.classList.add('bg-primary', 'text-on-primary');
+                btn.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+                
+                currentFilter = btn.dataset.role;
+                applyFilters();
+            });
+        });
+        
+        const modal = document.getElementById('add-modal');
+        const fab = document.getElementById('fab-add');
+        const cancelBtn = document.getElementById('btn-cancel');
+        const saveBtn = document.getElementById('btn-save');
+
+        fab.addEventListener('click', () => {
+            document.getElementById('modal-title').innerText = 'Add New Worker';
+            document.getElementById('edit-worker-id').value = '';
+            document.getElementById('input-name').value = '';
+            document.getElementById('input-city').value = '';
+            document.getElementById('input-contact').value = '';
+            document.getElementById('input-exp').value = '';
+            document.getElementById('input-rate').value = '';
+            document.getElementById('btn-save').innerText = 'Save Profile';
+            modal.classList.remove('hidden');
+        });
+
+        cancelBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        saveBtn.addEventListener('click', async () => {
+            const editId = document.getElementById('edit-worker-id').value.trim();
+            const name   = document.getElementById('input-name').value.trim();
+            const role   = document.getElementById('input-role').value.trim();
+            const city   = document.getElementById('input-city').value.trim();
+            const contact= document.getElementById('input-contact').value.trim();
+            const exp    = document.getElementById('input-exp').value.trim();
+            const rate   = document.getElementById('input-rate').value.trim();
+            
+            if(!name || !contact) { alert('Please enter name and contact number.'); return; }
+            if(!rate || rate === '0') { alert('Please enter the Daily Rate.'); return; }
+
+            saveBtn.disabled = true;
+            saveBtn.innerText = editId ? 'Updating...' : 'Saving...';
+            
+            const newId = editId || ('L-' + Date.now().toString().slice(-6));
+            const action = editId ? 'update_labour' : 'add_labour';
+
+            // IMPORTANT: Keys must match SCHEMA columns EXACTLY so buildRow works correctly in Code.gs
+            const payload = {
+                action        : action,
+                Labour_ID     : newId,
+                Full_Name     : name,
+                Role_Category : role,
+                Experience_Year: exp || '0',
+                Status        : 'Active',
+                Contact_Number : contact, 
+                City          : city,
+                Address       : '',
+                Daily_Rate    : rate,
+                Total_Jobs_Completed : '0'
+            };
+
+            console.log('Sending payload:', payload);
+
+            try {
+                const res = await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(payload)
+                });
+                const out = await res.json();
+                if(out.status === 'success') {
+                    modal.classList.add('hidden');
+                    document.getElementById('worker-detail-slide').classList.add('translate-x-full');
+                    document.body.style.overflow = '';
+                    loadLabours();
+                    showToast(editId ? '✅ Profile updated successfully!' : '✅ Worker added!', 'success');
+                } else {
+                    showToast('Server error: ' + (out.message || 'Unknown error'), 'error');
+                }
+            } catch(err) { 
+                showToast('Connection error. Please try again.', 'error');
+            } finally {
+                saveBtn.disabled = false;
+                saveBtn.innerText = editId ? 'Update Changes' : 'Save Profile';
+            }
+        });
+    });
+</script>
+</body></html>

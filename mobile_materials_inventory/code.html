@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Materials &amp; Inventory - Ghulam Qammar</title>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&amp;family=Nunito+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#eae6de",
+                    "secondary-fixed-dim": "#d4ccbf",
+                    "on-tertiary-container": "#554020",
+                    "on-error": "#ffffff",
+                    "on-surface": "#2e3230",
+                    "surface-variant": "#e4e0d8",
+                    "on-surface-variant": "#4a4e4a",
+                    "on-background": "#2e3230",
+                    "tertiary-fixed": "#f8e0a8",
+                    "error-container": "#ffdad8",
+                    "tertiary": "#705c30",
+                    "on-primary-container": "#d8f0de",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#8ecf9e",
+                    "primary-container": "#78a886",
+                    "error": "#b83230",
+                    "background": "#faf6f0",
+                    "surface-tint": "#4a7c59",
+                    "secondary": "#6b6358",
+                    "outline-variant": "#c4c8bc",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#c8e8d0",
+                    "surface-container-highest": "#e4e0d8",
+                    "inverse-surface": "#2e3230",
+                    "surface-container": "#f0ece4",
+                    "on-secondary-fixed": "#1e1a13",
+                    "tertiary-container": "#c4a66a",
+                    "outline": "#74796e",
+                    "on-tertiary-fixed-variant": "#554020",
+                    "inverse-on-surface": "#f5f0e8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#f0e8db",
+                    "tertiary-fixed-dim": "#dcc48e",
+                    "on-tertiary-fixed": "#221a05",
+                    "surface-bright": "#faf6f0",
+                    "inverse-primary": "#8ecf9e",
+                    "on-primary-fixed": "#002110",
+                    "primary": "#4a7c59",
+                    "on-secondary-fixed-variant": "#4a4538",
+                    "on-primary-fixed-variant": "#2a6038",
+                    "secondary-container": "#f0e8db",
+                    "surface-container-low": "#f5f1ea",
+                    "surface-dim": "#dbd7cf",
+                    "surface": "#faf6f0",
+                    "on-secondary-container": "#5e5548",
+                    "on-error-container": "#690005"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.5rem",
+                    "lg": "1rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": [
+                            "Literata"
+                    ],
+                    "body": [
+                            "Nunito Sans"
+                    ],
+                    "label": [
+                            "Nunito Sans"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Nunito Sans', sans-serif; }
+        h1, h2, h3 { font-family: 'Literata', serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#faf6f0] dark:bg-stone-900 shadow-[0_4px_20px_rgba(46,50,48,0.06)]">
+<div class="flex justify-between items-center px-6 h-16 w-full max-w-md mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img src="../assets/logo.png" alt="Ghulam Qammar Logo" class="w-full h-full object-cover"/>
+</div>
+<span class="font-serif text-xl font-bold text-emerald-900 dark:text-emerald-100">Ghulam Qammar</span>
+</div>
+<button class="text-stone-500 dark:text-stone-400 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 transition-colors p-2 rounded-full active:scale-95 transition-transform">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-20 px-6 max-w-md mx-auto">
+<!-- Section Header -->
+<div class="flex justify-between items-end mb-6">
+<div>
+<p class="text-tertiary font-semibold text-sm uppercase tracking-wider mb-1">Stock Overview</p>
+<h1 class="text-3xl font-bold text-on-surface">Inventory</h1>
+</div>
+<button id="export-btn" class="bg-primary text-on-primary px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 shadow-sm active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm">download</span>
+                Export to Excel
+            </button>
+</div>
+<!-- Inventory Hero Grid -->
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="bg-surface-container p-5 rounded-xl flex flex-col justify-between aspect-square">
+<div class="w-10 h-10 bg-primary-container/30 text-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div>
+<span class="text-4xl font-bold text-on-surface">84%</span>
+<p class="text-on-surface-variant text-sm font-medium">Global Capacity</p>
+</div>
+</div>
+<div class="bg-tertiary-container/20 p-5 rounded-xl flex flex-col justify-between aspect-square">
+<div class="w-10 h-10 bg-tertiary/20 text-tertiary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div>
+<span class="text-4xl font-bold text-tertiary">03</span>
+<p class="text-on-tertiary-container text-sm font-medium">Low Stock Alerts</p>
+</div>
+</div>
+</div>
+<!-- Inventory List -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold">Site Materials</h2>
+<span class="text-primary font-bold text-sm">View All</span>
+</div>
+<div id="inventory-container" class="grid grid-cols-1 gap-4">
+    <div class="text-center p-8"><span class="material-symbols-outlined animate-spin text-3xl">autorenew</span><p>Loading API...</p></div>
+</div>
+</section>
+</main>
+<!-- FAB: Add Material -->
+<button id="fab-add" class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center z-40 active:scale-90 transition-all">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+
+<!-- Add Modal -->
+<div class="fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-[100] hidden flex items-end justify-center" id="add-modal">
+<div class="bg-background w-full max-w-md rounded-t-3xl p-8 flex flex-col gap-6 animate-slide-up h-[75vh] overflow-y-auto">
+<div class="w-12 h-1 bg-outline-variant rounded-full mx-auto mb-2"></div>
+<div>
+<h3 class="text-2xl font-headline font-bold text-on-surface">Add Material</h3>
+</div>
+<div class="space-y-4">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Material Name</label>
+<input id="inv-name" class="w-full p-4 bg-surface-container rounded-xl border-none font-body" placeholder="e.g. Cement" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Unit</label>
+<input id="inv-unit" class="w-full p-4 bg-surface-container rounded-xl border-none font-body" placeholder="e.g. Bags, Tons" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Current Stock</label>
+<input id="inv-stock" class="w-full p-4 bg-surface-container rounded-xl border-none font-body" placeholder="50" type="number"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Total Capacity</label>
+<input id="inv-capacity" class="w-full p-4 bg-surface-container rounded-xl border-none font-body" placeholder="100" type="number"/>
+</div>
+</div>
+</div>
+<div class="flex gap-4 mt-4 pb-10">
+<button id="inv-btn-cancel" class="flex-1 py-4 rounded-xl font-bold text-primary bg-primary/10">Cancel</button>
+<button id="inv-btn-save" class="flex-1 py-4 rounded-xl font-bold text-on-primary bg-primary">Save to Inventory</button>
+</div>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 right-0 w-full flex justify-around items-center px-2 py-3 bg-[#faf6f0] dark:bg-stone-950 z-50 rounded-t-xl border-t border-stone-200 dark:border-stone-800 shadow-[0_-4px_20px_rgba(46,50,48,0.04)]">
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-3 py-1 hover:text-emerald-700 transition-all active:scale-90" href="../mobile_dashboard/code.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-sans text-[11px] font-medium tracking-wide">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-3 py-1 hover:text-emerald-700 transition-all active:scale-90" href="../mobile_projects_list/code.html">
+<span class="material-symbols-outlined">architecture</span>
+<span class="font-sans text-[11px] font-medium tracking-wide">Projects</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-3 py-1 hover:text-emerald-700 transition-all active:scale-90" href="../mobile_labour_management/code.html">
+<span class="material-symbols-outlined">group</span>
+<span class="font-sans text-[11px] font-medium tracking-wide">Labour</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-emerald-100 dark:bg-emerald-900/30 text-emerald-900 dark:text-emerald-100 rounded-xl px-3 py-1 active:scale-90 transition-all duration-150" href="../mobile_materials_inventory/code.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-sans text-[11px] font-medium tracking-wide">Inventory</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-3 py-1 hover:text-emerald-700 transition-all active:scale-90" href="../mobile_payments_calculator/code.html">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-sans text-[11px] font-medium tracking-wide">Payments</span>
+</a>
+</nav>
+
+<script>
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzNC5WUMJIy7OpeBc33c7d261s-az13X1zf7ZOj7hzzZsXKgxHErcM5lPIj2wmceIv-/exec';
+    
+    async function loadInventory() {
+        try {
+            document.getElementById('inventory-container').innerHTML = '<div class="text-center p-8 mt-5"><span class="material-symbols-outlined animate-spin text-3xl text-primary">autorenew</span><p>Loading API...</p></div>';
+            const res = await fetch(GOOGLE_SCRIPT_URL + '?action=get&sheet=Inventory&t=' + Date.now());
+            const data = await res.json();
+            
+            if(data.status === 'success') {
+                const items = data.data;
+                const container = document.getElementById('inventory-container');
+                container.innerHTML = '';
+                if(items.length === 0) container.innerHTML = '<p class="text-center">No materials found</p>';
+                
+                items.forEach(item => {
+                    let stock = parseInt(item.Current_Stock) || 0;
+                    let cap = parseInt(item.Total_Capacity) || Math.max(stock, 1);
+                    let pct = Math.min(Math.round((stock / cap) * 100), 100);
+                    let colorClass = pct < 20 ? 'bg-error text-error' : 'bg-primary text-primary';
+                    let barColor = pct < 20 ? 'bg-error' : 'bg-primary';
+                    
+                    const html = `
+                    <div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-4 hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 rounded-lg bg-white overflow-hidden flex-shrink-0 flex items-center justify-center bg-outline-variant/20 text-on-surface">
+                            <span class="material-symbols-outlined text-3xl">construction</span>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="font-bold text-on-surface">${item.Item_Name}</h3>
+                            <div class="flex items-center gap-2 mt-1">
+                                <div class="flex-grow bg-outline-variant h-1.5 rounded-full overflow-hidden">
+                                    <div class="${barColor} h-full" style="width: ${pct}%"></div>
+                                </div>
+                                <span class="text-[10px] font-bold ${colorClass.split(' ')[1]}">${stock} ${item.Unit}</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="${colorClass.split(' ')[1]} font-bold text-lg">${pct}%</span>
+                            <p class="text-[10px] text-on-surface-variant leading-none uppercase">Stock</p>
+                        </div>
+                    </div>`;
+                    container.insertAdjacentHTML('beforeend', html);
+                });
+            }
+        } catch(e) { console.error(e); }
+    }
+
+    async function exportToExcel() {
+        const btn = document.getElementById('export-btn');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-sm align-middle mr-1">autorenew</span> Exporting...';
+        btn.disabled = true;
+
+        try {
+            const res = await fetch(GOOGLE_SCRIPT_URL + '?action=get&sheet=Inventory&t=' + Date.now());
+            const data = await res.json();
+            
+            if(data.status === 'success' && data.data.length > 0) {
+                const items = data.data;
+                const headers = Object.keys(items[0]);
+                
+                // Construct CSV
+                const csvRows = [headers.join(',')];
+                for(const row of items) {
+                    const values = headers.map(header => {
+                        const val = (row[header] || '').toString().replace(/"/g, '""');
+                        return `"${val}"`;
+                    });
+                    csvRows.push(values.join(','));
+                }
+                const csvData = csvRows.join('\n');
+
+                const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
+                const link = document.createElement('a');
+                const url = URL.createObjectURL(blob);
+                link.setAttribute('href', url);
+                link.setAttribute('download', `Inventory_Export_${new Date().toISOString().split('T')[0]}.csv`);
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } else {
+                alert("No data available to export.");
+            }
+        } catch(e) {
+            console.error("Export error:", e);
+            alert("Failed to export inventory data.");
+        } finally {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadInventory();
+        
+        const modal = document.getElementById('add-modal');
+        const fab = document.getElementById('fab-add');
+        const cancelBtn = document.getElementById('inv-btn-cancel');
+        const saveBtn = document.getElementById('inv-btn-save');
+
+        fab.addEventListener('click', () => modal.classList.remove('hidden'));
+        cancelBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            saveBtn.innerText = 'Save to Inventory';
+        });
+
+        saveBtn.addEventListener('click', async () => {
+            const name = document.getElementById('inv-name').value;
+            const unit = document.getElementById('inv-unit').value;
+            const stock = document.getElementById('inv-stock').value;
+            const capacity = document.getElementById('inv-capacity').value;
+            
+            if(!name || !unit) { alert("Please enter material name and unit"); return; }
+            saveBtn.innerText = 'Saving...';
+            
+            const payload = {
+                "Item_ID": "INV-" + Date.now().toString().slice(-6),
+                "Item_Name": name,
+                "Current_Stock": stock || 0,
+                "Total_Capacity": capacity || stock || 100,
+                "Unit": unit
+            };
+
+            try {
+                const res = await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify({ action: "update_inventory", ...payload })
+                });
+                const out = await res.json();
+                if(out.status === 'success') {
+                    modal.classList.add('hidden');
+                    saveBtn.innerText = 'Save to Inventory';
+                    // clear forms
+                    document.getElementById('inv-name').value = '';
+                    document.getElementById('inv-unit').value = '';
+                    document.getElementById('inv-stock').value = '';
+                    document.getElementById('inv-capacity').value = '';
+                    loadInventory(); // refresh UI
+                    alert("Material saved to Google Sheets!");
+                } else {
+                    alert("Server replied with error: " + (out.message||""));
+                    saveBtn.innerText = 'Save to Inventory';
+                }
+            } catch(e) { 
+                console.error("Inventory save error: ", e);
+                alert("Error saving material. Please check console."); 
+                saveBtn.innerText = 'Save to Inventory'; 
+            }
+        });
+        document.getElementById('export-btn').addEventListener('click', exportToExcel);
+    });
+</script>
+</body></html>
