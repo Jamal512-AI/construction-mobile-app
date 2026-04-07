@@ -316,7 +316,10 @@
 <input id="pay-name" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg py-3 px-4 text-on-surface focus:ring-2 focus:ring-primary" placeholder="Payee Name" type="text"/>
 </div>
 <div class="space-y-2">
-<input id="pay-role" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg py-3 px-4 text-on-surface focus:ring-2 focus:ring-primary" placeholder="Role or Description" type="text"/>
+<input id="pay-role" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg py-3 px-4 text-on-surface focus:ring-2 focus:ring-primary" placeholder="Role (e.g. Mason, Electrician)" type="text"/>
+</div>
+<div class="space-y-2">
+<input id="pay-desc" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg py-3 px-4 text-on-surface focus:ring-2 focus:ring-primary" placeholder="Specific Description (Optional)" type="text"/>
 </div>
 <div class="space-y-2">
 <select id="pay-project" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg py-3 px-4 text-on-surface focus:ring-2 focus:ring-primary appearance-none">
@@ -433,7 +436,7 @@
 </nav>
 
 <script>
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzNC5WUMJIy7OpeBc33c7d261s-az13X1zf7ZOj7hzzZsXKgxHErcM5lPIj2wmceIv-/exec';
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxpUcVcaBnq6aeYexOw8vRVmJV3-F3tUfajMyqvo2Ttp7zgKfX-h9EJKXkdI47jE68s/exec';
 
     // ═══════════════════════════════════════════════════
     //  STATUS MODAL HELPER
@@ -675,21 +678,34 @@
                 if(items.length === 0) { container.innerHTML = '<p class="text-center text-sm text-secondary py-6">No payment records found</p>'; return; }
 
                 items.reverse().forEach(item => {
+                    const name = item.Payee_Name || item.payeename || item.Labour_Name || item.labourname || item.Recipient_Name || 'Unknown';
+                    const role = item.Role || item.role || item.Category || item.category || 'Service';
+                    const project = item.Project_Name || item.projectname || item.Associated_Project_ID || 'General Site';
+                    const amount = item.Total_Amount_PKR || item.totalamountpkr || item.Amount_PKR || 0;
+                    const date = item.Date || item.date || Date.now();
+                    const desc = item.Description || item.description || '';
+
                     const html = `
-                    <div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border-l-4 border-primary">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
-                                <span class="material-symbols-outlined">person</span>
+                    <div class="flex flex-col gap-2 p-4 bg-surface-container-low rounded-xl border-l-4 border-primary">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined">person</span>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-on-surface">${name}</p>
+                                    <p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-tight">${role} • ${project}</p>
+                                </div>
                             </div>
-                            <div>
-                                <p class="font-bold text-on-surface">${item.Recipient_Name || item.Payee_Name || 'Unknown'}</p>
-                                <p class="text-xs text-on-surface-variant">${item.Category || item.Role_Description || ''} ${item.Associated_Project_ID ? '• '+item.Associated_Project_ID : ''}</p>
+                            <div class="text-right">
+                                <p class="font-bold text-tertiary">Rs. ${parseFloat(amount).toLocaleString()}</p>
+                                <p class="text-[10px] uppercase font-bold text-on-surface-variant/60">${new Date(date).toLocaleDateString()}</p>
                             </div>
                         </div>
-                        <div class="text-right">
-                            <p class="font-bold text-on-surface text-tertiary">Rs. ${item.Total_Amount_PKR || item.Amount_PKR || 0}</p>
-                            <p class="text-[10px] uppercase font-bold text-on-surface-variant/60">${new Date(item.Date || Date.now()).toLocaleDateString()}</p>
-                        </div>
+                        ${desc ? `<div class="mt-1 flex items-center gap-2 text-xs text-secondary bg-surface-container/30 px-2 py-1.5 rounded-lg italic">
+                            <span class="material-symbols-outlined text-[14px]">notes</span>
+                            "${desc}"
+                        </div>` : ''}
                     </div>`;
                     container.insertAdjacentHTML('beforeend', html);
                 });
@@ -915,6 +931,7 @@
                 if (out.status === 'success') {
                     document.getElementById('pay-name').value = '';
                     document.getElementById('pay-role').value = '';
+                    document.getElementById('pay-desc').value = '';
                     document.getElementById('pay-amt').value = '';
                     loadPayments();
                     alert('Payment recorded!');
