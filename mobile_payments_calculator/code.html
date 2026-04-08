@@ -89,6 +89,16 @@
         to { transform: translateY(0); opacity: 1; }
     }
     .animate-slide-up { animation: slideUp 0.3s ease-out; }
+    .nav-scroll {
+      display: flex;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      -webkit-overflow-scrolling: touch;
+      white-space: nowrap;
+      gap: 0.5rem;
+    }
+    .nav-scroll::-webkit-scrollbar { display: none; }
 </style>
 </head>
 <body class="bg-background text-on-background min-h-screen pb-24">
@@ -412,24 +422,24 @@
 </main>
 
 <!-- BottomNavBar -->
-<nav class="fixed bottom-0 left-0 right-0 w-full flex justify-around items-center px-2 py-3 bg-[#faf6f0] dark:bg-stone-950 z-50 rounded-t-xl border-t border-stone-200 dark:border-stone-800 shadow-[0_-4px_20px_rgba(46,50,48,0.04)]">
-<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-3 py-1 hover:text-emerald-700 transition-all active:scale-90" href="../mobile_dashboard/code.html">
+<nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-[#faf6f0] dark:bg-stone-950 z-50 rounded-t-xl border-t border-stone-200 dark:border-stone-800 shadow-[0_-4px_20px_rgba(46,50,48,0.04)] px-4 py-3 nav-scroll items-center h-20">
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2 hover:text-emerald-700 transition-all active:scale-90 flex-shrink-0" href="../mobile_dashboard/code.html">
 <span class="material-symbols-outlined">dashboard</span>
 <span class="font-sans text-[11px] font-medium tracking-wide">Dashboard</span>
 </a>
-<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-3 py-1 hover:text-emerald-700 transition-all active:scale-90" href="../mobile_projects_list/code.html">
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2 hover:text-emerald-700 transition-all active:scale-90 flex-shrink-0" href="../mobile_projects_list/code.html">
 <span class="material-symbols-outlined">architecture</span>
 <span class="font-sans text-[11px] font-medium tracking-wide">Projects</span>
 </a>
-<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-3 py-1 hover:text-emerald-700 transition-all active:scale-90" href="../mobile_labour_management/code.html">
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2 hover:text-emerald-700 transition-all active:scale-90 flex-shrink-0" href="../mobile_labour_management/code.html">
 <span class="material-symbols-outlined">group</span>
 <span class="font-sans text-[11px] font-medium tracking-wide">Labour</span>
 </a>
-<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-3 py-1 hover:text-emerald-700 transition-all active:scale-90" href="../mobile_materials_inventory/code.html">
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2 hover:text-emerald-700 transition-all active:scale-90 flex-shrink-0" href="../mobile_materials_inventory/code.html">
 <span class="material-symbols-outlined">inventory_2</span>
 <span class="font-sans text-[11px] font-medium tracking-wide">Inventory</span>
 </a>
-<a class="flex flex-col items-center justify-center bg-emerald-100 dark:bg-emerald-900/30 text-emerald-900 dark:text-emerald-100 rounded-xl px-3 py-1 active:scale-90 transition-all duration-150" href="../mobile_payments_calculator/code.html">
+<a class="flex flex-col items-center justify-center bg-emerald-100 dark:bg-emerald-900/30 text-emerald-900 dark:text-emerald-100 rounded-xl px-5 py-2 active:scale-90 transition-all duration-150 flex-shrink-0" href="../mobile_payments_calculator/code.html">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
 <span class="font-sans text-[11px] font-medium tracking-wide">Payments</span>
 </a>
