@@ -82,11 +82,20 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-    </style>
-<style>
+    <style>
     body {
       min-height: max(884px, 100dvh);
     }
+    .nav-scroll {
+      display: flex;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      -webkit-overflow-scrolling: touch;
+      white-space: nowrap;
+      gap: 0.5rem;
+    }
+    .nav-scroll::-webkit-scrollbar { display: none; }
   </style>
   </head>
 <body class="bg-background text-on-background min-h-screen pb-24">
@@ -258,31 +267,31 @@
     </div>
 </div>
 <!-- BottomNavBar -->
-<nav class="fixed bottom-0 left-0 right-0 w-full z-50 bg-[#faf6f0] dark:bg-stone-950 shadow-[0_-4px_20px_rgba(46,50,48,0.04)] rounded-t-xl border-t border-stone-200 dark:border-stone-800 flex justify-around items-center px-2 py-3">
-<a class="flex flex-col items-center justify-center text-stone-500 hover:text-emerald-700 px-3 py-1 active:scale-90 transition-all" href="../mobile_dashboard/code.html">
+<nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-[#faf6f0] dark:bg-stone-950 z-50 rounded-t-xl border-t border-stone-200 dark:border-stone-800 shadow-[0_-4px_20px_rgba(46,50,48,0.04)] px-4 py-3 nav-scroll items-center h-20">
+<a class="flex flex-col items-center justify-center text-stone-500 hover:text-emerald-700 px-5 py-2 active:scale-90 transition-all flex-shrink-0" href="../mobile_dashboard/code.html">
 <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
 <span class="font-sans text-[11px] font-medium tracking-wide">Dashboard</span>
 </a>
-<a class="flex flex-col items-center justify-center text-stone-500 hover:text-emerald-700 px-3 py-1 active:scale-90 transition-all" href="../mobile_projects_list/code.html">
+<a class="flex flex-col items-center justify-center text-stone-500 hover:text-emerald-700 px-5 py-2 active:scale-90 transition-all flex-shrink-0" href="../mobile_projects_list/code.html">
 <span class="material-symbols-outlined" data-icon="architecture">architecture</span>
 <span class="font-sans text-[11px] font-medium tracking-wide">Projects</span>
 </a>
-<a class="flex flex-col items-center justify-center bg-emerald-100 text-emerald-900 rounded-xl px-3 py-1 active:scale-90 transition-all duration-150" href="../mobile_labour_management/code.html">
+<a class="flex flex-col items-center justify-center bg-emerald-100 text-emerald-900 rounded-xl px-5 py-2 active:scale-90 transition-all duration-150 flex-shrink-0" href="../mobile_labour_management/code.html">
 <span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
 <span class="font-sans text-[11px] font-medium tracking-wide">Labour</span>
 </a>
-<a class="flex flex-col items-center justify-center text-stone-500 hover:text-emerald-700 px-3 py-1 active:scale-90 transition-all" href="../mobile_materials_inventory/code.html">
+<a class="flex flex-col items-center justify-center text-stone-500 hover:text-emerald-700 px-5 py-2 active:scale-90 transition-all flex-shrink-0" href="../mobile_materials_inventory/code.html">
 <span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
 <span class="font-sans text-[11px] font-medium tracking-wide">Inventory</span>
 </a>
-<a class="flex flex-col items-center justify-center text-stone-500 hover:text-emerald-700 px-3 py-1 active:scale-90 transition-all" href="../mobile_payments_calculator/code.html">
+<a class="flex flex-col items-center justify-center text-stone-500 hover:text-emerald-700 px-5 py-2 active:scale-90 transition-all flex-shrink-0" href="../mobile_payments_calculator/code.html">
 <span class="material-symbols-outlined" data-icon="payments">payments</span>
 <span class="font-sans text-[11px] font-medium tracking-wide">Payments</span>
 </a>
 </nav>
 
 <script>
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzNC5WUMJIy7OpeBc33c7d261s-az13X1zf7ZOj7hzzZsXKgxHErcM5lPIj2wmceIv-/exec';
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxpUcVcaBnq6aeYexOw8vRVmJV3-F3tUfajMyqvo2Ttp7zgKfX-h9EJKXkdI47jE68s/exec';
     
     let allLabours = [];
     let currentFilter = 'all';
