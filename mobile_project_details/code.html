@@ -3,88 +3,96 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Location X Project - Details</title>
+<title>Ghulam Qammar - Projects</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700;7..72,800&amp;family=Nunito+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "surface-container-high": "#eae6de",
-            "secondary-fixed-dim": "#d4ccbf",
-            "on-tertiary-container": "#554020",
-            "on-error": "#ffffff",
-            "on-surface": "#2e3230",
-            "surface-variant": "#e4e0d8",
-            "on-surface-variant": "#4a4e4a",
-            "on-background": "#2e3230",
-            "tertiary-fixed": "#f8e0a8",
-            "error-container": "#ffdad8",
-            "tertiary": "#705c30",
-            "on-primary-container": "#d8f0de",
-            "on-secondary": "#ffffff",
-            "primary-fixed-dim": "#8ecf9e",
-            "primary-container": "#78a886",
-            "error": "#b83230",
-            "background": "#faf6f0",
-            "surface-tint": "#4a7c59",
-            "secondary": "#6b6358",
-            "outline-variant": "#c4c8bc",
-            "on-tertiary": "#ffffff",
-            "primary-fixed": "#c8e8d0",
-            "surface-container-highest": "#e4e0d8",
-            "inverse-surface": "#2e3230",
-            "surface-container": "#f0ece4",
-            "on-secondary-fixed": "#1e1a13",
-            "tertiary-container": "#c4a66a",
-            "outline": "#74796e",
-            "on-tertiary-fixed-variant": "#554020",
-            "inverse-on-surface": "#f5f0e8",
-            "surface-container-lowest": "#ffffff",
-            "on-primary": "#ffffff",
-            "secondary-fixed": "#f0e8db",
-            "tertiary-fixed-dim": "#dcc48e",
-            "on-tertiary-fixed": "#221a05",
-            "surface-bright": "#faf6f0",
-            "inverse-primary": "#8ecf9e",
-            "on-primary-fixed": "#002110",
-            "primary": "#4a7c59",
-            "on-secondary-fixed-variant": "#4a4538",
-            "on-primary-fixed-variant": "#2a6038",
-            "secondary-container": "#f0e8db",
-            "surface-container-low": "#f5f1ea",
-            "surface-dim": "#dbd7cf",
-            "surface": "#faf6f0",
-            "on-secondary-container": "#5e5548",
-            "on-error-container": "#690005"
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#eae6de",
+                    "secondary-fixed-dim": "#d4ccbf",
+                    "on-tertiary-container": "#554020",
+                    "on-error": "#ffffff",
+                    "on-surface": "#2e3230",
+                    "surface-variant": "#e4e0d8",
+                    "on-surface-variant": "#4a4e4a",
+                    "on-background": "#2e3230",
+                    "tertiary-fixed": "#f8e0a8",
+                    "error-container": "#ffdad8",
+                    "tertiary": "#705c30",
+                    "on-primary-container": "#d8f0de",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#8ecf9e",
+                    "primary-container": "#78a886",
+                    "error": "#b83230",
+                    "background": "#faf6f0",
+                    "surface-tint": "#4a7c59",
+                    "secondary": "#6b6358",
+                    "outline-variant": "#c4c8bc",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#c8e8d0",
+                    "surface-container-highest": "#e4e0d8",
+                    "inverse-surface": "#2e3230",
+                    "surface-container": "#f0ece4",
+                    "on-secondary-fixed": "#1e1a13",
+                    "tertiary-container": "#c4a66a",
+                    "outline": "#74796e",
+                    "on-tertiary-fixed-variant": "#554020",
+                    "inverse-on-surface": "#f5f0e8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#f0e8db",
+                    "tertiary-fixed-dim": "#dcc48e",
+                    "on-tertiary-fixed": "#221a05",
+                    "surface-bright": "#faf6f0",
+                    "inverse-primary": "#8ecf9e",
+                    "on-primary-fixed": "#002110",
+                    "primary": "#4a7c59",
+                    "on-secondary-fixed-variant": "#4a4538",
+                    "on-primary-fixed-variant": "#2a6038",
+                    "secondary-container": "#f0e8db",
+                    "surface-container-low": "#f5f1ea",
+                    "surface-dim": "#dbd7cf",
+                    "surface": "#faf6f0",
+                    "on-secondary-container": "#5e5548",
+                    "on-error-container": "#690005"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.5rem",
+                    "lg": "1rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Literata", "serif"],
+                    "body": ["Nunito Sans", "sans-serif"],
+                    "label": ["Nunito Sans", "sans-serif"]
+            }
           },
-          "borderRadius": {
-            "DEFAULT": "0.5rem",
-            "lg": "1rem",
-            "xl": "1.5rem",
-            "full": "9999px"
-          },
-          "fontFamily": {
-            "headline": ["Literata", "serif"],
-            "body": ["Nunito Sans", "sans-serif"],
-            "label": ["Nunito Sans", "sans-serif"]
-          }
         },
-      },
-    }
-  </script>
+      }
+    </script>
 <style>
-    body { font-family: 'Nunito Sans', sans-serif; background-color: #faf6f0; }
-    h1, h2, h3 { font-family: 'Literata', serif; }
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    }
-    .custom-scrollbar::-webkit-scrollbar { height: 4px; }
-    .custom-scrollbar::-webkit-scrollbar-thumb { background: #c4c8bc; border-radius: 10px; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body { font-family: 'Nunito Sans', sans-serif; background-color: #faf6f0; }
+        h1, h2, h3 { font-family: 'Literata', serif; }
+    <style>
     body {
       min-height: max(884px, 100dvh);
     }
@@ -100,248 +108,680 @@
     .nav-scroll::-webkit-scrollbar { display: none; }
   </style>
   </head>
-<body class="bg-background text-on-surface min-h-screen pb-24">
+<body class="bg-background text-on-background min-h-screen pb-24">
 <!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 bg-[#faf6f0] dark:bg-stone-900 shadow-[0_4px_20px_rgba(46,50,48,0.06)]">
-<div class="flex justify-between items-center px-6 h-16 w-full max-w-md mx-auto">
+<header class="fixed top-0 w-full z-50 bg-[#faf6f0] shadow-[0_4px_20px_rgba(46,50,48,0.06)] flex justify-between items-center px-6 h-16 max-w-md mx-auto left-0 right-0">
 <div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full overflow-hidden bg-primary-container flex items-center justify-center">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-fixed">
 <img src="../assets/logo.png" alt="Ghulam Qammar Logo" class="w-full h-full object-cover"/>
 </div>
-<span class="font-serif text-xl font-bold text-emerald-900 dark:text-emerald-100">Ghulam Qammar</span>
+<h1 class="font-serif text-xl font-bold text-emerald-900 leading-none">Ghulam Qammar</h1>
 </div>
-<button class="text-emerald-800 dark:text-emerald-400 hover:bg-stone-200/50 dark:hover:bg-stone-800/50 transition-colors p-2 rounded-full active:scale-95 transition-transform">
+<button class="text-emerald-800 p-2 rounded-full hover:bg-stone-200/50 transition-colors active:scale-95">
 <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
 </button>
-</div>
 </header>
+<!-- Main Content Canvas -->
 <main class="pt-20 px-6 max-w-md mx-auto">
-<!-- Project Hero Header -->
+<!-- Welcome & Search -->
 <section class="mb-8">
-<div class="flex justify-between items-start mb-2">
+<div class="flex justify-between items-end mb-6">
 <div>
-<h1 class="text-3xl font-headline font-bold text-primary mb-1">Location X Project</h1>
-<p class="text-on-surface-variant font-body">DHA Phase 6, Sector J, Lahore</p>
+<span class="text-sm font-label text-secondary mb-1 block">Overview</span>
+<h2 class="text-3xl font-headline font-bold text-on-surface">Active Projects</h2>
 </div>
-<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">In Progress</span>
+<div class="bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full text-xs font-bold">
+                    8 Total
+                </div>
 </div>
-<div class="flex gap-4 mt-4">
-<div class="flex flex-col">
-<span class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Total Budget</span>
-<span class="text-lg font-headline font-bold text-on-surface">PKR 14.5M</span>
-</div>
-<div class="w-px h-10 bg-outline-variant opacity-30"></div>
-<div class="flex flex-col">
-<span class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Days Elapsed</span>
-<span class="text-lg font-headline font-bold text-on-surface">42 / 120</span>
-</div>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container border-none rounded-xl focus:ring-2 focus:ring-primary text-on-surface-variant font-body" placeholder="Search projects..." type="text"/>
 </div>
 </section>
-<!-- Project Tabs Navigation (Scrollable) -->
-<nav class="flex overflow-x-auto gap-2 mb-8 custom-scrollbar pb-2">
-<button class="whitespace-nowrap px-4 py-2 rounded-xl bg-primary text-on-primary font-bold shadow-sm transition-all">Labour</button>
-<button class="whitespace-nowrap px-4 py-2 rounded-xl bg-surface-container text-on-surface-variant font-medium hover:bg-surface-variant transition-all">Inventory</button>
-<button class="whitespace-nowrap px-4 py-2 rounded-xl bg-surface-container text-on-surface-variant font-medium hover:bg-surface-variant transition-all">Instruments</button>
-<button class="whitespace-nowrap px-4 py-2 rounded-xl bg-surface-container text-on-surface-variant font-medium hover:bg-surface-variant transition-all">Payments</button>
-</nav>
-<!-- SECTION: Labour Attendance -->
-<section class="mb-10">
-<div class="flex justify-between items-center mb-4">
-<h2 class="text-xl font-headline font-semibold text-on-surface">Assigned Labour</h2>
-<span class="text-sm font-medium text-primary">12 Present today</span>
+<!-- Project Cards (Bento-inspired Grid) -->
+<div id="projects-container" class="space-y-6">
+    <div class="flex justify-center p-12">
+        <span class="material-symbols-outlined text-4xl text-primary animate-spin">refresh</span>
+    </div>
+    <p class="text-center text-sm font-label text-secondary">Loading active projects from Google Sheets...</p>
 </div>
-<div class="space-y-3">
-<!-- Labour Item -->
-<div class="bg-surface-container-low p-4 rounded-lg flex items-center justify-between transition-all hover:bg-surface-container">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg overflow-hidden bg-secondary-fixed">
-<img alt="Labour" class="w-full h-full object-cover" data-alt="Close-up of a construction worker wearing a yellow hard hat with dust on his face, warm natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEgrgTZ9Im9q225Mt-2fN4mRxSqZRbmocUfHcDxOnjXxrre6gDUiux579eqd8aCu40L5u_8P1yWn2L0pC47MCFt-SAKDRZSei6Dxq2Bm0f7kp3A9SIEzoC8ZXysxLo41eIhoENvqMZnoLU5EfkgWmqapYGo7WQ0eQS3VJoZc6YbmLw35ulK84Hyrqaf7dWZUjJneZe-sz5NgPmq5u0HA3xhA6QpdvE3oKYEZYmpxVOwpjqA49FIM0wPrCEjJlQP2Yt-c37ADy1ZO6f"/>
-</div>
-<div>
-<p class="font-bold text-on-surface">Zahid Khan</p>
-<p class="text-xs text-on-surface-variant">Lead Mason • #LB-204</p>
-</div>
-</div>
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-primary"></span>
-<span class="text-xs font-bold text-primary">Present</span>
-</div>
-</div>
-<!-- Labour Item -->
-<div class="bg-surface-container-low p-4 rounded-lg flex items-center justify-between transition-all hover:bg-surface-container">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg overflow-hidden bg-secondary-fixed">
-<img alt="Labour" class="w-full h-full object-cover" data-alt="Young man in work clothes at a construction site, smiling, warm golden hour light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC2Lg5VR8IQPrhHA0UuryZvdP6LSLxXi7ya8_OKCoGaL5I-vZS-UAoSDcR_jS0sFAtSPKl-ZCbXbfx3EHPIrHrkKNCftwmhZ2fxKBaB_oVaBReq4t0g_WzVUOXQR4zHa32LVaCokBqNC8njJ8iAW9dQM_K3i-KXzYjKmK-vpS1DQdU8pMdVbuA7SgbXC_m-cnJZq8nV2bCB5xL1zIbJeRsST7sxDApUHNOPGMEmDHPoWXksY-Cnvrqi4rjo9MvcbtZmJSlLzZaBBGZ"/>
-</div>
-<div>
-<p class="font-bold text-on-surface">Mohammad Arif</p>
-<p class="text-xs text-on-surface-variant">General Helper • #LB-091</p>
-</div>
-</div>
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-primary"></span>
-<span class="text-xs font-bold text-primary">Present</span>
-</div>
-</div>
-<!-- Labour Item -->
-<div class="bg-surface-container-low p-4 rounded-lg flex items-center justify-between opacity-60 grayscale transition-all hover:bg-surface-container">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-lg overflow-hidden bg-secondary-fixed">
-<img alt="Labour" class="w-full h-full object-cover" data-alt="Construction worker in high-visibility vest standing in shade of a building frame" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjwXvAHFgdYzsg-F3qtQTB_RgX1RZC2uM19DoEOpwmxm6PPqQe63vEf3KEpHk82mYQ3esfDwH4SaSq5xgzDf8_7VgEDlOqWd5jGYCklJOvYX5SVpbEScfd7ZO9BF6G7-bF4pvaT6Pvje3pHV1ZyPm2PeayKCwGCIgVu1jg3cEbxJE1vaj-_rwbaCJWFiI9_x3nEgGzOfpyQC1EFFpuS-RMoJ80_EGNEsGTyDSOtydhJQhw3S2GePF26Msu4LRetFwJDjB6hVhjHLQS"/>
-</div>
-<div>
-<p class="font-bold text-on-surface">Salman Raza</p>
-<p class="text-xs text-on-surface-variant">Steel Fixer • #LB-112</p>
-</div>
-</div>
-<div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-error"></span>
-<span class="text-xs font-bold text-error">Absent</span>
-</div>
-</div>
-</div>
+<!-- Add Project Section -->
+<section class="mt-10 mb-6 px-1">
+<button type="button" id="add-project-btn" class="w-full bg-primary text-on-primary py-4 rounded-xl flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transition-shadow active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-bold text-lg" id="add-btn-text">Add New Project</span>
+</button>
 </section>
-<!-- SECTION: Required Materials -->
-<section class="mb-10">
-<h2 class="text-xl font-headline font-semibold text-on-surface mb-4">Required Materials</h2>
-<div class="grid grid-cols-1 gap-4">
-<!-- Material Card: Sariya -->
-<div class="bg-white/40 p-5 rounded-xl border border-outline-variant/30 backdrop-blur-sm">
-<div class="flex justify-between items-center mb-3">
-<div class="flex items-center gap-3">
-<div class="p-2 bg-secondary-fixed rounded-lg text-on-secondary-fixed">
-<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
-</div>
-<span class="font-bold font-headline text-on-surface">Sariya (Steel)</span>
-</div>
-<span class="text-xs font-bold text-on-surface-variant">7.2 / 10 Tons</span>
-</div>
-<div class="w-full bg-surface-container rounded-full h-2">
-<div class="bg-primary h-2 rounded-full" style="width: 72%"></div>
-</div>
-<p class="mt-2 text-[11px] text-on-surface-variant">Next delivery expected: <span class="font-bold text-on-surface">Oct 24</span></p>
-</div>
-<!-- Material Card: Cement -->
-<div class="bg-white/40 p-5 rounded-xl border border-outline-variant/30 backdrop-blur-sm">
-<div class="flex justify-between items-center mb-3">
-<div class="flex items-center gap-3">
-<div class="p-2 bg-secondary-fixed rounded-lg text-on-secondary-fixed">
-<span class="material-symbols-outlined" data-icon="inventory">inventory</span>
-</div>
-<span class="font-bold font-headline text-on-surface">Cement (Bags)</span>
-</div>
-<span class="text-xs font-bold text-error">120 / 800 Bags</span>
-</div>
-<div class="w-full bg-surface-container rounded-full h-2">
-<div class="bg-error h-2 rounded-full" style="width: 15%"></div>
-</div>
-<p class="mt-2 text-[11px] text-error font-bold italic">Critical low stock! Reorder required.</p>
-</div>
-<!-- Material Card: Sand -->
-<div class="bg-white/40 p-5 rounded-xl border border-outline-variant/30 backdrop-blur-sm">
-<div class="flex justify-between items-center mb-3">
-<div class="flex items-center gap-3">
-<div class="p-2 bg-secondary-fixed rounded-lg text-on-secondary-fixed">
-<span class="material-symbols-outlined" data-icon="grain">grain</span>
-</div>
-<span class="font-bold font-headline text-on-surface">Sand (Trolley)</span>
-</div>
-<span class="text-xs font-bold text-on-surface-variant">4 / 5 Units</span>
-</div>
-<div class="w-full bg-surface-container rounded-full h-2">
-<div class="bg-primary h-2 rounded-full" style="width: 80%"></div>
-</div>
-</div>
-</div>
-</section>
-<!-- SECTION: Project Payments -->
-<section class="mb-10">
-<h2 class="text-xl font-headline font-semibold text-on-surface mb-4">Recent Payments</h2>
-<div class="bg-surface-container-highest rounded-xl overflow-hidden shadow-sm">
-<div class="p-4 border-b border-outline-variant/20 flex justify-between items-center bg-surface-container-high/50">
-<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Transaction History</span>
-<button class="text-primary text-xs font-bold">View Statement</button>
-</div>
-<div class="divide-y divide-outline-variant/20">
-<div class="p-4 flex justify-between items-center bg-white/30">
+
+<!-- Add Project Modal -->
+<div class="fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-[100] hidden flex items-end justify-center" id="add-project-modal">
+<div class="bg-background w-full max-w-md rounded-t-3xl p-8 flex flex-col gap-6 animate-slide-up h-[85vh] overflow-y-auto">
+<div class="w-12 h-1 bg-outline-variant rounded-full mx-auto mb-2"></div>
 <div>
-<p class="font-bold text-sm">Weekly Labour Wages</p>
-<p class="text-[10px] text-on-surface-variant uppercase font-medium">Oct 18, 2023 • Cash</p>
+<h3 class="text-2xl font-headline font-bold text-on-surface">New Project</h3>
+<p class="text-sm font-label text-secondary">Enter the project details below.</p>
 </div>
-<span class="font-headline font-bold text-on-surface">PKR 145,000</span>
+<div class="space-y-4">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Project Name</label>
+<input id="proj-name" class="w-full p-4 bg-surface-container rounded-xl border-none font-body" placeholder="e.g. DHA Phase 5 Villa" type="text"/>
 </div>
-<div class="p-4 flex justify-between items-center bg-white/30">
-<div>
-<p class="font-bold text-sm">Lafarge Cement Supply</p>
-<p class="text-[10px] text-on-surface-variant uppercase font-medium">Oct 15, 2023 • Cheque</p>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Nau'iyat (Nature)</label>
+<select id="proj-nature" class="w-full p-4 bg-surface-container rounded-xl border-none font-body">
+<option>New Construction</option>
+<option>Renovation</option>
+<option>Extension</option>
+<option>Repair Work</option>
+<option>Interior Design</option>
+<option>Other</option>
+</select>
 </div>
-<span class="font-headline font-bold text-on-surface">PKR 380,000</span>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Location</label>
+<input id="proj-location" class="w-full p-4 bg-surface-container rounded-xl border-none font-body" placeholder="Lahore" type="text"/>
 </div>
-<div class="p-4 flex justify-between items-center bg-white/30">
-<div>
-<p class="font-bold text-sm">Fuel &amp; Logistics</p>
-<p class="text-[10px] text-on-surface-variant uppercase font-medium">Oct 12, 2023 • Bank Transfer</p>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Status Phase</label>
+<select id="proj-phase" class="w-full p-4 bg-surface-container rounded-xl border-none font-body">
+<option>Planning</option>
+<option>Foundations</option>
+<option>Structural</option>
+<option>Finishing</option>
+<option>Handover</option>
+</select>
 </div>
-<span class="font-headline font-bold text-on-surface">PKR 12,400</span>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Total Budget (PKR)</label>
+<input id="proj-budget" class="w-full p-4 bg-surface-container rounded-xl border-none font-body" placeholder="500000" type="number"/>
 </div>
-</div>
-<div class="p-4 bg-primary/10 flex justify-between items-center">
-<span class="font-bold text-primary">Total Disbursed</span>
-<span class="font-headline font-extrabold text-primary">PKR 2,840,500</span>
-</div>
-</div>
-</section>
-<!-- SECTION: Instruments -->
-<section class="mb-6">
-<h2 class="text-xl font-headline font-semibold text-on-surface mb-4">On-site Instruments</h2>
-<div class="flex gap-4 overflow-x-auto custom-scrollbar pb-4">
-<div class="flex-shrink-0 w-32 bg-surface-container p-4 rounded-xl flex flex-col items-center text-center">
-<span class="material-symbols-outlined text-tertiary mb-2" data-icon="construction">construction</span>
-<p class="text-xs font-bold">Concrete Mixer</p>
-<p class="text-[10px] text-on-surface-variant mt-1">SN: 4421-B</p>
-</div>
-<div class="flex-shrink-0 w-32 bg-surface-container p-4 rounded-xl flex flex-col items-center text-center">
-<span class="material-symbols-outlined text-tertiary mb-2" data-icon="electric_bolt">electric_bolt</span>
-<p class="text-xs font-bold">Vibrator</p>
-<p class="text-[10px] text-on-surface-variant mt-1">SN: 9002-X</p>
-</div>
-<div class="flex-shrink-0 w-32 bg-surface-container p-4 rounded-xl flex flex-col items-center text-center">
-<span class="material-symbols-outlined text-tertiary mb-2" data-icon="square_foot">square_foot</span>
-<p class="text-xs font-bold">Laser Level</p>
-<p class="text-[10px] text-on-surface-variant mt-1">SN: 1102-L</p>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Progress (%)</label>
+<input id="proj-progress" class="w-full p-4 bg-surface-container rounded-xl border-none font-body" placeholder="0" type="number"/>
 </div>
 </div>
-</section>
+</div>
+<div class="flex gap-4 mt-4 pb-10">
+<button id="proj-btn-cancel" class="flex-1 py-4 rounded-xl font-bold text-primary bg-primary/10">Cancel</button>
+<button id="proj-btn-save" class="flex-1 py-4 rounded-xl font-bold text-on-primary bg-primary">Save Project</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Delete Project Modal -->
+<div class="fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4" id="delete-project-modal">
+<div class="bg-background w-full max-w-[320px] rounded-3xl p-6 flex flex-col gap-4 animate-slide-up shadow-2xl">
+    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-2 text-red-500">
+        <span class="material-symbols-outlined text-2xl">warning</span>
+    </div>
+    <div class="text-center">
+        <h3 class="text-xl font-headline font-bold text-on-surface mb-2">Delete Project?</h3>
+        <p class="text-sm font-label text-secondary leading-relaxed">Are you absolutely sure you want to permanently delete this project? This action cannot be undone.</p>
+    </div>
+    <div class="flex flex-col gap-3 mt-4">
+        <button id="del-btn-confirm" class="w-full py-3.5 rounded-xl font-bold text-white bg-red-500 hover:bg-red-600 active:scale-95 transition-all">Yes, Delete</button>
+        <button id="del-btn-cancel" class="w-full py-3.5 rounded-xl font-bold text-on-surface bg-surface-container hover:bg-surface-container-high active:scale-95 transition-all">Keep Project</button>
+    </div>
+</div>
+</div>
 </main>
+
+<!-- ════════════════════════════════════════════════════ -->
+<!--  PROJECT DETAIL PANEL (slide in from right)         -->
+<!-- ════════════════════════════════════════════════════ -->
+<div id="project-detail-panel" class="fixed inset-0 z-[200] bg-background translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto pb-24">
+    <!-- Panel Header -->
+    <header class="sticky top-0 z-10 bg-[#faf6f0] shadow-[0_2px_12px_rgba(46,50,48,0.08)] flex items-center gap-3 px-4 h-16 max-w-md mx-auto">
+        <button type="button" id="detail-back-btn" class="w-9 h-9 flex items-center justify-center rounded-full bg-surface-container hover:bg-surface-container-high active:scale-90 transition-all">
+            <span class="material-symbols-outlined text-on-surface">arrow_back</span>
+        </button>
+        <div class="flex-1 min-w-0">
+            <h2 id="detail-proj-name" class="font-headline font-bold text-on-surface text-lg leading-tight truncate">Project Details</h2>
+            <p id="detail-proj-location" class="text-xs text-secondary"></p>
+        </div>
+        <span id="detail-proj-nature-badge" class="text-[10px] font-bold uppercase tracking-wide bg-tertiary-fixed text-on-tertiary-container px-2 py-1 rounded-full"></span>
+    </header>
+
+    <!-- Panel Body -->
+    <div class="max-w-md mx-auto px-5 pt-5 space-y-6">
+
+        <!-- Project Summary Card -->
+        <div class="bg-primary rounded-2xl p-5 text-white shadow-lg">
+            <div class="grid grid-cols-3 gap-3 mb-4 text-center">
+                <div>
+                    <p class="text-white/60 text-[9px] font-bold uppercase tracking-widest mb-1">Budget</p>
+                    <p id="detail-proj-budget" class="text-white font-bold text-sm leading-tight">—</p>
+                </div>
+                <div class="border-x border-white/20">
+                    <p class="text-emerald-200 text-[9px] font-bold uppercase tracking-widest mb-1">Received</p>
+                    <p id="detail-proj-received" class="text-emerald-200 font-bold text-sm leading-tight">Loading...</p>
+                </div>
+                <div>
+                    <p class="text-white/60 text-[9px] font-bold uppercase tracking-widest mb-1">Net</p>
+                    <p id="detail-proj-net" class="text-white font-bold text-sm leading-tight">—</p>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between items-center mb-1">
+                    <span class="text-white/60 text-[9px] font-bold uppercase tracking-widest">Phase: <span id="detail-proj-phase" class="text-white">—</span></span>
+                    <span id="detail-proj-progress-label" class="text-white font-bold text-xs">0%</span>
+                </div>
+                <div class="w-full bg-white/20 rounded-full h-2">
+                    <div id="detail-proj-progress-bar" class="bg-white h-2 rounded-full transition-all duration-700" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jumrat Weekly Payment Records for this project -->
+        <div>
+            <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1">calendar_month</span>
+                    <h3 class="font-headline font-bold text-on-surface">Jumrat Payment Records</h3>
+                </div>
+                <span class="text-[10px] text-secondary font-bold uppercase tracking-wider">Thu → Thu</span>
+            </div>
+            <div id="detail-weekly-logs" class="space-y-3">
+                <div class="text-center p-6"><span class="material-symbols-outlined animate-spin text-2xl text-primary">autorenew</span></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 <!-- BottomNavBar -->
-<footer class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-[#faf6f0] dark:bg-stone-950 z-50 rounded-t-xl border-t border-stone-200 dark:border-stone-800 shadow-[0_-4px_20px_rgba(46,50,48,0.04)] px-4 py-3 nav-scroll items-center h-20">
-<!-- Dashboard -->
-<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2 hover:text-emerald-700 dark:hover:text-emerald-300 active:scale-90 transition-all duration-150 flex-shrink-0" href="../mobile_dashboard/code.html">
+<nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-[#faf6f0] z-50 rounded-t-xl border-t border-stone-200 shadow-[0_-4px_20px_rgba(46,50,48,0.04)] px-4 py-3 nav-scroll items-center h-20">
+<a class="flex flex-col items-center justify-center text-stone-500 hover:text-emerald-700 px-5 py-2 active:scale-90 transition-all flex-shrink-0" href="../mobile_dashboard/code.html">
 <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
 <span class="font-sans text-[11px] font-medium tracking-wide">Dashboard</span>
 </a>
-<!-- Projects (Active) -->
-<a class="flex flex-col items-center justify-center bg-emerald-100 dark:bg-emerald-900/30 text-emerald-900 dark:text-emerald-100 rounded-xl px-5 py-2 active:scale-90 transition-all duration-150 flex-shrink-0" href="../mobile_projects_list/code.html">
+<a class="flex flex-col items-center justify-center bg-emerald-100 text-emerald-900 rounded-xl px-5 py-2 active:scale-90 transition-all flex-shrink-0" href="../mobile_projects_list/code.html">
 <span class="material-symbols-outlined" data-icon="architecture" style="font-variation-settings: 'FILL' 1;">architecture</span>
 <span class="font-sans text-[11px] font-medium tracking-wide">Projects</span>
 </a>
-<!-- Labour -->
-<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2 hover:text-emerald-700 dark:hover:text-emerald-300 active:scale-90 transition-all duration-150 flex-shrink-0" href="../mobile_labour_management/code.html">
+<a class="flex flex-col items-center justify-center text-stone-500 hover:text-emerald-700 px-5 py-2 active:scale-90 transition-all flex-shrink-0" href="../mobile_labour_management/code.html">
 <span class="material-symbols-outlined" data-icon="group">group</span>
 <span class="font-sans text-[11px] font-medium tracking-wide">Labour</span>
 </a>
-<!-- Inventory -->
-<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2 hover:text-emerald-700 dark:hover:text-emerald-300 active:scale-90 transition-all duration-150 flex-shrink-0" href="../mobile_materials_inventory/code.html">
+<a class="flex flex-col items-center justify-center text-stone-500 hover:text-emerald-700 px-5 py-2 active:scale-90 transition-all flex-shrink-0" href="../mobile_materials_inventory/code.html">
 <span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
 <span class="font-sans text-[11px] font-medium tracking-wide">Inventory</span>
 </a>
-<!-- Payments -->
-<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2 hover:text-emerald-700 dark:hover:text-emerald-300 active:scale-90 transition-all duration-150 flex-shrink-0" href="../mobile_payments_calculator/code.html">
+<a class="flex flex-col items-center justify-center text-stone-500 hover:text-emerald-700 px-5 py-2 active:scale-90 transition-all flex-shrink-0" href="../mobile_payments_calculator/code.html">
 <span class="material-symbols-outlined" data-icon="payments">payments</span>
 <span class="font-sans text-[11px] font-medium tracking-wide">Payments</span>
 </a>
-</footer>
+</nav>
+
 <script>
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxpUcVcaBnq6aeYexOw8vRVmJV3-F3tUfajMyqvo2Ttp7zgKfX-h9EJKXkdI47jE68s/exec';
+// 1. Setup your configuration variable
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxpUcVcaBnq6aeYexOw8vRVmJV3-F3tUfajMyqvo2Ttp7zgKfX-h9EJKXkdI47jE68s/exec';
+
+// ----------------------------------------------------
+// GET Requests
+// ----------------------------------------------------
+async function fetchLabours() {
+  try {
+    const response = await fetch(`${GOOGLE_SCRIPT_URL}?sheet=Labours&t=${Date.now()}`);
+    const result = await response.json();
+    
+    if (result.status === 'success') {
+      console.log('Labours Fetched:', result.data);
+      return result.data; // Array of Labour objects
+    } else {
+      console.error('Error fetching labours:', result.message);
+      return [];
+    }
+  } catch (err) {
+    console.error('Network error during fetchLabours:', err);
+  }
+}
+
+async function fetchActiveProjects() {
+  try {
+    const response = await fetch(`${GOOGLE_SCRIPT_URL}?sheet=Projects&t=${Date.now()}`);
+    const result = await response.json();
+    
+    if (result.status === 'success') {
+      console.log('All Projects Fetched:', result.data);
+      return result.data.filter(project => project['Status_Phase'] !== 'Completed' && project['Status_Phase'] !== 'On Hold');
+    } else {
+      console.error('Error fetching projects:', result.message);
+      return [];
+    }
+  } catch (err) {
+    console.error('Network error during fetchActiveProjects:', err);
+  }
+}
+
+// ----------------------------------------------------
+// POST Requests
+// ----------------------------------------------------
+async function logPayment(paymentData) {
+  try {
+    const response = await fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8' // Essential for bypassing CORS
+      },
+      body: JSON.stringify({
+        action: 'log_payment',
+        ...paymentData
+      })
+    });
+    
+    const result = await response.json();
+    console.log('Payment Response:', result);
+    return result;
+  } catch (err) {
+    console.error('Network error during logPayment:', err);
+  }
+}
+
+async function addProject(projectData) {
+  try {
+    const response = await fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8'
+      },
+      body: JSON.stringify({
+        action: 'add_project',
+        ...projectData
+      })
+    });
+    
+    const result = await response.json();
+    console.log('Add Project Response:', result);
+    return result;
+  } catch (err) {
+    console.error('Network error during addProject:', err);
+  }
+}
+
+async function deleteProject(projectId) {
+  try {
+    const response = await fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({ action: 'delete_project', Project_ID: projectId })
+    });
+    const result = await response.json();
+    return result;
+  } catch (err) {
+    console.error('Network error during deleteProject:', err);
+  }
+}
+
+// UI Rendering Logic for Projects
+async function renderProjectsList() {
+    const container = document.getElementById('projects-container');
+
+    // Fetch projects AND weekly logs in parallel
+    const [projects, weeklyResult] = await Promise.all([
+        fetchActiveProjects(),
+        fetch(GOOGLE_SCRIPT_URL + '?action=get&sheet=Weekly_Logs&t=' + Date.now())
+            .then(r => r.json()).catch(() => ({ status: 'error', data: [] }))
+    ]);
+
+    // Build a map: project name → total received from owner
+    const receivedMap = {};
+    if (weeklyResult.status === 'success' && weeklyResult.data) {
+        weeklyResult.data.forEach(log => {
+            const name = log.Project_Name || '';
+            if (!receivedMap[name]) receivedMap[name] = 0;
+            receivedMap[name] += parseFloat(log.Owner_Payment_Received) || 0;
+        });
+    }
+    
+    if (!projects || projects.length === 0) {
+        container.innerHTML = '<p class="text-center text-sm font-label text-secondary py-8">No active projects found! Click Add New Project below to get started.</p>';
+        return;
+    }
+
+    container.innerHTML = ''; // Clear loading message
+    
+    const fallbackImages = [
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuBkL5xtBNgw3cFZEx8KW9YnNJG-_vIY22LkuuvddDIsSVxz5czMZLFgRd-nkrH6mXMRH3v-o-BV-PA6ExeRpAaCsM3t8PnA76BULVv6-kpLv8d_9BnwLc3gMyZlmE0yDnZ3A-2FUZ2JOyloezgSYnu5T5EZfxhQ5f_jCMuinhCoe-hDdHPt3Z0lm08BnHeq9XeuYn6R-WOi67RNEpYPvJL-sqJ2nuQx6DxZhonqORX2zZ7zWIzzs7Q3kOsN0-atkrhnwNbN8YSbnM9e",
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuCmkwLRPO3lrYwwimbzWSGzeARMHkN0ShsiGturSO5VUIGbWL9DcBJGzs0ZqZsdisaCWg-QUe7jWnrifaFSzQ5vZBQA__AAVVyLXu6PGQTg6SVVxpKAJguHudJQ-99nBptLYy4xJa3dY6K10j7wJ5nZ9Qvzgcgv6NDtXSjSkhwaWxiUuRSNKHOzzn2r-BExhQjFAxIqZBhnAVUNvkRweFtNW5HvAMfwe_YfFoN9YH2bC0lrltTLWhUAQWt4rMVvICWbTAL7kBVgrFCq",
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuB4lTSX84UPhO894FC10KRj5VeZJBQNfwHsfEx-yLF6NGIXmcz_YTJuSEd5vrPSDI1eCMp5H0hXr2Q3r2sdwCbfXJ28nyUOMstSGCHtef19pnyhSFeBjAnUroSDtf0yq578DALqvZYYyuOmXlVoYWmfH3Un3AMYHCM--pWzgWxo2PDu2gbLCYhWAKhnWNsO7jSY_XENVUqOE8P4vW5Vxf7MhRdabQdM0YHuuYjJ1yZwkwzK63SJ9_VlgyyKj_bt5LPkO3qjS0qPmH22"
+    ];
+
+    projects.forEach((proj, i) => {
+        const progress = proj.Progress_Percentage ? String(proj.Progress_Percentage).replace('%','') : '0';
+        const progressNum = parseFloat(progress) || 0;
+        const img = fallbackImages[i % fallbackImages.length];
+        const nature = proj.Project_Nature || '';
+        const budget = proj.Total_Budget_PKR || '';
+        const budgetClean = String(budget).replace(/[^0-9]/g, '');
+        const budgetDisplay = budgetClean ? 'Rs. ' + parseInt(budgetClean).toLocaleString() : '';
+
+        // Total actually received from project owner (from Weekly_Logs)
+        const totalReceived = receivedMap[proj.Project_Name] || 0;
+        const receivedDisplay = totalReceived > 0 ? 'Rs. ' + totalReceived.toLocaleString() : 'Rs. 0';
+        
+        const natureIcons = {
+            'New Construction': '🏗️',
+            'Renovation': '🔨',
+            'Extension': '📐',
+            'Repair Work': '🔧',
+            'Interior Design': '🎨',
+            'Other': '📋'
+        };
+        const natureIcon = natureIcons[nature] || '📋';
+        
+        const cardHTML = `
+        <article class="relative group bg-surface-container-low rounded-xl p-5 shadow-[0_4px_20px_rgba(46,50,48,0.06)] flex flex-col gap-3 cursor-pointer hover:shadow-md hover:-translate-y-0.5 transition-all project-card"
+            data-id="${proj.Project_ID}"
+            data-name="${(proj.Project_Name||'').replace(/"/g,'&#34;')}"
+            data-location="${(proj.Location||'').replace(/"/g,'&#34;')}"
+            data-phase="${proj.Status_Phase||''}"
+            data-budget="${budgetDisplay}"
+            data-progress="${progressNum}"
+            data-nature="${natureIcon} ${nature}">
+            <button class="delete-project-btn absolute top-3 right-3 text-red-500/60 hover:text-red-500 bg-red-100/50 p-2 rounded-xl active:scale-95 transition-all opacity-80 z-10" data-id="${proj.Project_ID}">
+                <span class="material-symbols-outlined text-[18px]">delete</span>
+            </button>
+            <div class="flex gap-4">
+                <div class="w-20 h-20 rounded-lg overflow-hidden shrink-0">
+                    <img alt="Project Image" class="w-full h-full object-cover" src="${img}"/>
+                </div>
+                <div class="flex-1 min-w-0">
+                    <h3 class="text-lg font-headline font-semibold text-on-surface truncate pr-8">${proj.Project_Name || 'Unnamed Project'}</h3>
+                    <p class="text-xs text-on-surface-variant font-body">${proj.Location || 'Unknown'}</p>
+                    ${nature ? `<span class="inline-block mt-1 text-[10px] font-bold uppercase tracking-wider bg-tertiary-fixed text-on-tertiary-container px-2 py-0.5 rounded-full">${natureIcon} ${nature}</span>` : ''}
+                </div>
+            </div>
+            <div class="w-full bg-surface-container-highest rounded-full h-1.5">
+                <div class="bg-primary h-1.5 rounded-full transition-all" style="width: ${progressNum}%"></div>
+            </div>
+            <div class="flex justify-between items-center text-[11px] font-label">
+                <span class="text-tertiary font-bold uppercase tracking-tight">${proj.Status_Phase || 'Setup'}</span>
+                <span class="text-secondary opacity-75">${progressNum}%</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 pt-2 border-t border-outline-variant/20">
+                ${budgetDisplay ? `<div class="text-xs">
+                    <span class="text-on-surface-variant font-semibold block text-[10px] uppercase tracking-wider mb-0.5">Contract Budget</span>
+                    <span class="font-bold text-on-surface">${budgetDisplay}</span>
+                </div>` : '<div></div>'}
+                <div class="text-xs text-right">
+                    <span class="text-emerald-700 font-semibold block text-[10px] uppercase tracking-wider mb-0.5">Owner Paid So Far</span>
+                    <span class="font-bold text-emerald-700">${receivedDisplay}</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-1 text-[10px] text-secondary/50 font-medium">
+                <span class="material-symbols-outlined text-[12px]">touch_app</span>
+                <span>Tap to view weekly records</span>
+            </div>
+        </article>
+        `;
+        container.insertAdjacentHTML('beforeend', cardHTML);
+    });
+    
+    // Update total count pill at the top
+    const totalPill = document.querySelector('.bg-primary-fixed.text-on-primary-fixed');
+    if (totalPill) {
+        totalPill.innerText = `${projects.length} Total`;
+    }
+}
+
+// ----------------------------------------------------
+// UI Logic Hook
+// ----------------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Automatically fetch and render active projects on page load
+    renderProjectsList();
+
+    // 2. Project card click → open detail panel
+    document.getElementById('projects-container').addEventListener('click', (e) => {
+        // Don't open panel if delete button was clicked
+        if (e.target.closest('.delete-project-btn')) return;
+        const card = e.target.closest('.project-card');
+        if (card) openProjectDetail(card.dataset);
+    });
+
+    // Back button
+    document.getElementById('detail-back-btn').addEventListener('click', () => {
+        const panel = document.getElementById('project-detail-panel');
+        panel.classList.add('translate-x-full');
+        document.body.style.overflow = '';
+    });
+
+    // 3. Delegate click events for Delete Buttons
+    let projectToDeleteId = null;
+    let buttonToSpin = null;
+    const delModal = document.getElementById('delete-project-modal');
+    
+    document.getElementById('projects-container').addEventListener('click', (e) => {
+        const btn = e.target.closest('.delete-project-btn');
+        if (btn) {
+            projectToDeleteId = btn.dataset.id;
+            buttonToSpin = btn;
+            delModal.classList.remove('hidden');
+        }
+    });
+
+    document.getElementById('del-btn-cancel').addEventListener('click', () => {
+        delModal.classList.add('hidden');
+        projectToDeleteId = null;
+        buttonToSpin = null;
+    });
+
+    document.getElementById('del-btn-confirm').addEventListener('click', async () => {
+        if (!projectToDeleteId) return;
+        
+        delModal.classList.add('hidden');
+        buttonToSpin.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span>';
+        
+        const res = await deleteProject(projectToDeleteId);
+        if (res && res.status === 'success') {
+            await renderProjectsList();
+        } else {
+            alert("Error deleting: Please make sure 'delete_project' is added to your Code.gs");
+            if (buttonToSpin) {
+               buttonToSpin.innerHTML = '<span class="material-symbols-outlined text-[18px]">delete</span>';
+            }
+        }
+        projectToDeleteId = null;
+        buttonToSpin = null;
+    });
+
+    const modal = document.getElementById('add-project-modal');
+    const openBtn = document.getElementById('add-project-btn');
+    const cancelBtn = document.getElementById('proj-btn-cancel');
+    const saveBtn = document.getElementById('proj-btn-save');
+    
+    if (openBtn) {
+        openBtn.addEventListener('click', () => {
+             modal.classList.remove('hidden');
+        });
+        
+        cancelBtn.addEventListener('click', () => {
+             modal.classList.add('hidden');
+        });
+
+        saveBtn.addEventListener('click', async () => {
+            const name = document.getElementById('proj-name').value;
+            const location = document.getElementById('proj-location').value;
+            const phase = document.getElementById('proj-phase').value;
+            const budget = document.getElementById('proj-budget').value;
+            const progress = document.getElementById('proj-progress').value;
+            
+            if(!name || !location) { alert("Please fill out name and location."); return; }
+            
+            saveBtn.innerText = "Saving to Google Sheets...";
+            
+            const nature = document.getElementById('proj-nature').value;
+            const payload = {
+                "Project_ID": "P-" + Date.now().toString().slice(-6),
+                "Project_Name": name,
+                "Location": location,
+                "Status_Phase": phase,
+                "Progress_Percentage": (progress || 0) + "%",
+                "Total_Budget_PKR": budget || "0",
+                "Days_Elapsed": "0",
+                "Start_Date": new Date().toISOString().split("T")[0],
+                "Project_Nature": nature
+            };
+            
+            const res = await addProject(payload);
+            
+            if (res && res.status === 'success') {
+                modal.classList.add('hidden');
+                
+                // clear form
+                document.getElementById('proj-name').value = '';
+                document.getElementById('proj-location').value = '';
+                document.getElementById('proj-progress').value = '';
+                document.getElementById('proj-budget').value = '';
+                
+                const container = document.getElementById('projects-container');
+                container.innerHTML = '<div class="flex justify-center p-12"><span class="material-symbols-outlined text-4xl text-primary animate-spin">refresh</span></div>';
+                await renderProjectsList();
+                alert('Success! Custom Project added and rendered.');
+            } else if (res && res.status === 'error') {
+                alert('Error adding project: ' + res.message);
+            }
+            
+            saveBtn.innerText = "Save Project";
+        });
+    }
+});
+
+// ════════════════════════════════════════════════════
+//  PROJECT DETAIL PANEL LOGIC
+// ════════════════════════════════════════════════════
+function openProjectDetail(dataset) {
+    const panel = document.getElementById('project-detail-panel');
+
+    // Populate header
+    document.getElementById('detail-proj-name').innerText = dataset.name || 'Project';
+    document.getElementById('detail-proj-location').innerText = dataset.location || '';
+    const natureBadge = document.getElementById('detail-proj-nature-badge');
+    natureBadge.innerText = dataset.nature || '';
+    natureBadge.style.display = dataset.nature ? '' : 'none';
+
+    // Populate summary card
+    document.getElementById('detail-proj-phase').innerText = dataset.phase || '—';
+    document.getElementById('detail-proj-budget').innerText = dataset.budget || 'Not Set';
+    document.getElementById('detail-proj-received').innerText = 'Loading...';
+    document.getElementById('detail-proj-net').innerText = '...';
+    const progress = parseFloat(dataset.progress) || 0;
+    document.getElementById('detail-proj-progress-label').innerText = progress + '%';
+    document.getElementById('detail-proj-progress-bar').style.width = progress + '%';
+
+    // Show loading
+    document.getElementById('detail-weekly-logs').innerHTML = '<div class="text-center p-6"><span class="material-symbols-outlined animate-spin text-2xl text-primary">autorenew</span><p class="text-sm text-secondary mt-2">Loading Jumrat records...</p></div>';
+
+    // Slide in
+    panel.classList.remove('translate-x-full');
+    panel.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+
+    // Load only weekly logs (this IS the payment record for Jumrat-based projects)
+    loadDetailWeeklyLogs(dataset.name, dataset.budget);
+}
+
+async function loadDetailWeeklyLogs(projName, budgetDisplay) {
+    const container = document.getElementById('detail-weekly-logs');
+    try {
+        const res = await fetch(GOOGLE_SCRIPT_URL + '?action=get&sheet=Weekly_Logs&t=' + Date.now());
+        const data = await res.json();
+        if (data.status === 'success') {
+            const logs = (data.data || []).filter(l => l.Project_Name === projName).reverse();
+
+            // Compute financial totals
+            let totalReceived = 0, totalLabour = 0, totalExtras = 0;
+            logs.forEach(l => {
+                totalReceived += parseFloat(l.Owner_Payment_Received) || 0;
+                totalLabour += parseFloat(l.Labour_Payment) || 0;
+                totalExtras += parseFloat(l.Extra_Expenses) || 0;
+            });
+            const totalNet = totalReceived - totalLabour - totalExtras;
+
+            // Update the summary card financials
+            document.getElementById('detail-proj-received').innerText = 'Rs. ' + totalReceived.toLocaleString();
+            const netEl = document.getElementById('detail-proj-net');
+            netEl.innerText = (totalNet >= 0 ? '+ ' : '- ') + 'Rs. ' + Math.abs(totalNet).toLocaleString();
+            netEl.className = totalNet >= 0 ? 'text-emerald-200 font-bold text-sm leading-tight' : 'text-red-300 font-bold text-sm leading-tight';
+
+            if (logs.length === 0) {
+                container.innerHTML = `
+                <div class="text-center py-8 bg-surface-container rounded-2xl border border-outline-variant/20">
+                    <span class="material-symbols-outlined text-3xl text-secondary mb-2">receipt_long</span>
+                    <p class="text-sm text-secondary font-semibold">No Jumrat records yet</p>
+                    <p class="text-xs text-secondary/70 mt-1">Log the first entry from the <a href="../mobile_payments_calculator/code.html" class="text-primary font-bold">Payments page</a></p>
+                </div>`;
+                return;
+            }
+
+            // Overall totals row
+            container.innerHTML = `
+            <div class="grid grid-cols-3 gap-2 mb-1">
+                <div class="bg-emerald-50 border border-emerald-100 rounded-xl p-3 text-center">
+                    <p class="text-[9px] text-emerald-600 font-bold uppercase tracking-wider">Total Received</p>
+                    <p class="text-emerald-800 font-bold text-sm">Rs. ${totalReceived.toLocaleString()}</p>
+                </div>
+                <div class="bg-orange-50 border border-orange-100 rounded-xl p-3 text-center">
+                    <p class="text-[9px] text-orange-600 font-bold uppercase tracking-wider">Total Labour</p>
+                    <p class="text-orange-800 font-bold text-sm">Rs. ${totalLabour.toLocaleString()}</p>
+                </div>
+                <div class="bg-${totalNet >= 0 ? 'emerald' : 'red'}-50 border border-${totalNet >= 0 ? 'emerald' : 'red'}-100 rounded-xl p-3 text-center">
+                    <p class="text-[9px] text-${totalNet >= 0 ? 'emerald' : 'red'}-600 font-bold uppercase tracking-wider">Net Balance</p>
+                    <p class="text-${totalNet >= 0 ? 'emerald' : 'red'}-800 font-bold text-sm">Rs. ${Math.abs(totalNet).toLocaleString()}</p>
+                </div>
+            </div>
+            <p class="text-[10px] text-secondary/60 text-center font-medium mb-3">Weekly entries (newest first)</p>`;
+
+            logs.forEach(log => {
+                const received = parseFloat(log.Owner_Payment_Received) || 0;
+                const labour = parseFloat(log.Labour_Payment) || 0;
+                const extras = parseFloat(log.Extra_Expenses) || 0;
+                const net = received - labour - extras;
+                const netColor = net >= 0 ? 'text-emerald-700' : 'text-red-600';
+                const netBg = net >= 0 ? 'border-emerald-100 bg-emerald-50/50' : 'border-red-100 bg-red-50/50';
+                container.insertAdjacentHTML('beforeend', `
+                <div class="p-4 rounded-xl border ${netBg}">
+                    <div class="flex justify-between items-center mb-3">
+                        <div>
+                            <p class="text-[10px] text-secondary uppercase font-bold tracking-wider">${log.Week_Date || '—'}</p>
+                            ${log.Description ? `<p class="text-xs text-secondary/80 italic mt-0.5">"${log.Description}"</p>` : ''}
+                        </div>
+                        <div class="text-right">
+                            <p class="text-[9px] text-secondary uppercase tracking-wider">Net</p>
+                            <p class="font-bold ${netColor} text-sm">Rs. ${net.toLocaleString()}</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 text-[11px] font-medium">
+                        <div class="bg-white rounded-lg p-2 text-center border border-emerald-100">
+                            <p class="text-secondary text-[9px] uppercase tracking-wider">↓ Received</p>
+                            <p class="text-emerald-700 font-bold">Rs. ${received.toLocaleString()}</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-2 text-center border border-orange-100">
+                            <p class="text-secondary text-[9px] uppercase tracking-wider">↑ Labour</p>
+                            <p class="text-orange-600 font-bold">Rs. ${labour.toLocaleString()}</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-2 text-center border border-red-100">
+                            <p class="text-secondary text-[9px] uppercase tracking-wider">⊕ Extras</p>
+                            <p class="text-red-600 font-bold">Rs. ${extras.toLocaleString()}</p>
+                        </div>
+                    </div>
+                </div>`);
+            });
+        } else {
+            container.innerHTML = '<p class="text-xs text-secondary text-center py-6">Weekly_Logs tab not found. Run initializeSheet() in Apps Script once to create it.</p>';
+            document.getElementById('detail-proj-received').innerText = '—';
+            document.getElementById('detail-proj-net').innerText = '—';
+        }
+    } catch(e) {
+        console.error(e);
+        container.innerHTML = '<p class="text-xs text-red-500 text-center py-4">Could not load records. Check your Script URL.</p>';
+        document.getElementById('detail-proj-received').innerText = 'Error';
+        document.getElementById('detail-proj-net').innerText = '—';
+    }
+}
 </script>
 </body></html>
